@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Alunos>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Professores>
  */
-class AlunosFactory extends Factory
+class ProfessoresFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +18,9 @@ class AlunosFactory extends Factory
     {
         return [
             'nome'=>$this->faker->name(),
-            'nomedamae'=>$this->faker->name(),
-            'nomedopai'=>$this->faker->name(),
             'celular'=>$this->faker->phone(),
+            'formacao'=>$this->faker->randomElement(['Pedagogo','psicopedagogo','Letras']),
+
         ];
     }
 }
