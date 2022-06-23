@@ -16,8 +16,7 @@ return new class extends Migration
         Schema::create('turmas', function (Blueprint $table) {
             $table->id();
             $table-> string('nome');
-        //    $table-> foreignId('professores_id')->constrained();
-        $table->unsignedBigInteger('id_professor');
+            $table->unsignedBigInteger('id_professor');
         $table->foreign('id_professor')->references('id')->on('professores');
 
             $table->timestamps();

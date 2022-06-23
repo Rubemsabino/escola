@@ -18,7 +18,10 @@ return new class extends Migration
             $table-> foreignId('alunos_id')->constrained();
             $table->unsignedBigInteger('disciplina_id');
             $table->foreign('disciplina_id')->references('id')->on('disciplina');
-            $table->float('nota');
+            $table->string('unidade');
+            $table->float('projeto');
+            $table->float('teste');
+            $table->float('prova');
             $table->timestamps();
         });
     }
