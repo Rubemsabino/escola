@@ -39,7 +39,7 @@ git pull
 -como clonar o projeto da nuvem (padrão só uma vez nos novos PC)
 *Aabrir vscode na pasta dos projetos
 *Abrir terminal no vscode no menu terminal
-git clone https://github.com/Rubemsabino/escola.git 
+git clone https://github.com/Rubemsabino/escola.git
 *lembra de entrar na pasta do projeto no vscode
 composer update
 *criar banco de dados no mysql
@@ -48,7 +48,7 @@ composer update
 *executar migration
 php artisan migrate:fresh --seed
 
-5
+
 
 
 
