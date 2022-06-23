@@ -1,0 +1,53 @@
+Instalações do Zero
+1º Instalar o Xamp (PHP, Apache, Mysql,PHPmaydmim)
+2º Git
+3º Composer
+4º Vscode
+5º Insomnia
+6º Chrome
+
+
+-Iniciar projeto Laravel
+composer create-project laravel/laravel escola
+
+-rodar projeto
+php artisan serve
+
+-criar migration (criar estrutura de uma tabela)
+php artisan make:migration CreateAlunosTable
+
+-executar migration
+php artisan migrate:fresh
+
+-popular tabelas com dados fakes
+php artisan make:model Alunos --factory
+__________________________________________________
+Git
+-inicar git no projeto (padrão só uma vez no novo Projeto)
+git init
+
+-salvar modificações
+git add .
+git commit -m "commit inicial"
+
+-subir pra nuvem
+git push
+
+-como puxar alterações da nuvem
+git pull
+
+-como clonar o projeto da nuvem (padrão só uma vez nos novos PC)
+*Aabrir vscode na pasta dos projetos
+*Abrir terminal no vscode no menu terminal
+git clone https://github.com/Rubemsabino/escola.git 
+*lembra de entrar na pasta do projeto no vscode
+composer update
+*criar banco de dados no mysql
+*duplicar o arquivo .env.example e renomelo para .env,
+*depois calocar o nome do banco de dados dentro do env na variavel DB_DATABASE.
+*executar migration
+php artisan migrate:fresh --seed
+
+
+
+
