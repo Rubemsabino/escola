@@ -48,6 +48,7 @@ composer update
 *executar migration
 php artisan migrate:fresh --seed
 
+5
 
 
 
