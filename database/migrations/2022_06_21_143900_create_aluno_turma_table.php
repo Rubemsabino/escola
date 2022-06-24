@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('aluno_turma', function (Blueprint $table) {
+        Schema::create('alunos_turmas', function (Blueprint $table) {
             $table->id();
-            $table-> foreignId('professores_id')->constrained();
+            $table-> foreignId('turmas_id')->constrained();
             $table-> foreignId('alunos_id')->constrained();
             $table->timestamps();
         });
