@@ -39,17 +39,16 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
    <!--=============================formularios===========================================-->
-   <h1>disciplina</h1>
-   <form action="/disciplina/novo" method="POST">
-@csrf
-    <div class="form-group">
-      <label >Nome</label>
-      <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
 
-
-          <button type="submit" class="btn btn-primary">Enviar</button>
-  </form>
-   <!--=============================formularios formularios============================= -->
+   <button onclick="location='/'"class="btn btn-primary">
+    voltar pagina principal
+   </button>
+   <button onclick="location='{{route('aluno.form')}}'"class="btn btn-primary">
+    inserir nova disciplina
+   </button>
+   <H1>Disciplina salvo com sucesso</H1>
+   
+   <!--=============================formularios fim============================= -->
         </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>

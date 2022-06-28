@@ -17,13 +17,14 @@ use App\Models\AlunosTurmas;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//exibe a pagina principla
+Route::get('/', function () {    return view('principal');});
 
-Route::get('/', function () {    return view('welcome');});
 
-
-
-Route::get('/alunos/novo', function () {    return view('alunos');});
-Route::post('/alunos/novo', function (Request $request) {
+// exibe formulario de alunos
+Route::get('/alunos/form', function () {    return view('aluno-form');})->name("aluno.form");
+//envias os dados para o banco de dados
+Route::post('/alunos/salvar', function (Request $request) {
     $nome=$request->input('nome');
     $mae=$request->input('mae');
     $pai=$request->input('pai');
@@ -36,11 +37,11 @@ Route::post('/alunos/novo', function (Request $request) {
     $aluno->celular=$celular;
     $aluno->save();
 
-dd('ok');
-});
+    return view('aluno-sucesso');
+})->name("aluno.salvar");
 
 // exebir formulario para cadastro do professro
-Route::get('/professores/novo', function () {    return view('professores');});
+Route::get('/professores/novo', function () {    return view('professores-form');})->name("professores.form");
 Route::post('/professores/novo', function (Request $request) {
     $nome=$request->input('nome');
     $celular=$request->input('celular');
@@ -52,11 +53,11 @@ Route::post('/professores/novo', function (Request $request) {
     $professor->formacao=$formacao;
     $professor->save();
 
-dd('ok');
-});
+    return view('professores-sucesso');
+})->name("professores.salvar");
 
 // exebir formulario para cadastro de disciplina
-Route::get('/disciplina/novo', function () {    return view('disciplina');});
+Route::get('/disciplina/novo', function () {    return view('disciplina-form');})->name("disciplina.form");
 Route::post('/disciplina/novo', function (Request $request) {
     $nome=$request->input('nome');
 
@@ -65,8 +66,8 @@ Route::post('/disciplina/novo', function (Request $request) {
     $disciplina->nome=$nome;
     $disciplina->save();
 
-    dd('ok');
-});
+    return view('disciplina-sucesso');
+})->name("disciplina.salvar");
 
 
 Route::get('/alunos/{id}', function (Request $request,$id) {
