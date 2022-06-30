@@ -43,6 +43,7 @@
    <button onclick="location='/'"class="btn btn-primary">
     VOLTAR A PÁGINA PRINCIPAL
    </button>
+
    <H1>Alunos</H1>
    <form action="/alunos/salvar" method="POST">
 @csrf
@@ -50,26 +51,22 @@
     <div class="form-group">
       <label >Nome do Aluno</label>
       <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
-
     </div>
 
     <div class="form-group">
         <label >Nome da Mãe do Aluno</label>
         <input type="text" class="form-control" name='mae'placeholder="Digite Aqui">
+    </div>
 
-      </div>
-
-      <div class="form-group">
+    <div class="form-group">
         <label >Nome do Pai do Aluno</label>
         <input type="text" class="form-control" name='pai'placeholder="Digite Aqui">
+    </div>
 
-      </div>
-
-      <div class="form-group">
+    <div class="form-group">
         <label >Número do Aluno</label>
         <input type="text" class="form-control" name='celular'placeholder="Digite Aqui">
-
-      </div>
+    </div>
 
     <button type="submit" class="btn btn-primary">Enviar</button>
   </form>

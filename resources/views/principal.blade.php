@@ -43,16 +43,16 @@
    <button onclick="location='{{route('aluno.form')}}'"class="btn btn-primary">
     NOVO ALUNO
    </button>
-                
-   <button onclick="location='/disciplina/novo'"class="btn btn-primary">
+
+   <button onclick="location='/disciplina/form'"class="btn btn-primary">
     NOVA DISCIPLINA
    </button>
 
-   <button onclick="location='/professores/novo'"class="btn btn-primary">
+   <button onclick="location='/professores/form'"class="btn btn-primary">
     NOVO PROFESSOR
    </button>
 
-   
+
 <!-- Pills content -->
         </div>
         </div>

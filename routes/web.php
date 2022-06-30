@@ -41,8 +41,8 @@ Route::post('/alunos/salvar', function (Request $request) {
 })->name("aluno.salvar");
 
 // exebir formulario para cadastro do professro
-Route::get('/professores/novo', function () {    return view('professores-form');})->name("professores.form");
-Route::post('/professores/novo', function (Request $request) {
+Route::get('/professores/form', function () {    return view('professores-form');})->name("professores.form");
+Route::post('/professores/salvar', function (Request $request) {
     $nome=$request->input('nome');
     $celular=$request->input('celular');
     $formacao=$request->input('formacao');
@@ -57,8 +57,8 @@ Route::post('/professores/novo', function (Request $request) {
 })->name("professores.salvar");
 
 // exebir formulario para cadastro de disciplina
-Route::get('/disciplina/novo', function () {    return view('disciplina-form');})->name("disciplina.form");
-Route::post('/disciplina/novo', function (Request $request) {
+Route::get('/disciplina/form', function () {    return view('disciplina-form');})->name("disciplina.form");
+Route::post('disciplina/salvar', function (Request $request) {
     $nome=$request->input('nome');
 
 

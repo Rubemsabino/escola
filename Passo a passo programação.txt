@@ -1,48 +1,76 @@
-Instalações do Zero
-1º Instalar o Xamp (PHP, Apache, Mysql,PHPmaydmim)
-2º Git
-3º Composer
+Instalações do Zero (APLICADO UMA VEZ POR PC)
+1º Instalar o Xamp (PHP, Apache, Mysql,PHPmaydmim) DEPOIS DE BAIXAR FAZER NO TERMINAL:php --version
+2º Git - DEPOIS DE BAIXAR FAZER NO TERMINAL:git --version
+3º Composer - DEPOIS DE BAIXAR FAZER NO TERMINAL:composer --version
 4º Vscode
 5º Insomnia
 6º Chrome
 
+____________________________________________________________________
+UMA VEZ POR PROJETO
 
--Iniciar projeto Laravel
+*Iniciar projeto NOVO no Laravel(o nome do projeto será o último nome)
 composer create-project laravel/laravel escola
 
--rodar projeto
+*rodar projeto
 php artisan serve
 
--criar migration (criar estrutura de uma tabela)
-php artisan make:migration CreateAlunosTable
+*criar banco de dados no mysql(PHPmaydmim)
 
--executar migration
+*depois calocar o nome do banco de dados dentro do .env na variavel DB_DATABASE.
+____________________________________________________________________
+TABELA NOVA DENTRO DO BD (preparando o BD)
+*criar migration (criar estrutura de uma tabela)
+php artisan make:migration CreateAlunosTable
+(database/migrate/ EU:abrir a migration e criar campos das tabelas)
+
+*executar migration
 php artisan migrate:fresh
 
--popular tabelas com dados fakes
+*criar arquivos para popular tabelas com dados fakes
 php artisan make:model Alunos --factory
-__________________________________________________
+(database/factory/ EU:abrir e colocar os nomes das factory iguais aos campos da migration)
+
+*chamar a factory no arguivo
+(database/seeders/databaseSeeder.php)
+EXEMPLO DA LINHA QUE DEVE SER ADICIONADA= \App\Models\Alunos::factory(20)->create();
+
+*rodar factory e popular banco de dados
+php artisan migrate:fresh --seed
+____________________________________________________________________
+
 Git
--inicar git no projeto (padrão só uma vez no novo Projeto)
+*inicar git no projeto (padrão só uma vez no novo Projeto)
 git init
 
--salvar modificações
-git add .
-git commit -m "commit inicial"
+*como clonar o projeto da nuvem (padrão só uma vez nos novos PC)
 
--subir pra nuvem
-git push
+*abrir vscode na pasta dos projetos
 
--como puxar alterações da nuvem
-git pull
-
--como clonar o projeto da nuvem (padrão só uma vez nos novos PC)
-*Aabrir vscode na pasta dos projetos
 *Abrir terminal no vscode no menu terminal
 git clone https://github.com/Rubemsabino/escola.git
 *lembra de entrar na pasta do projeto no vscode
 composer update
 *criar banco de dados no mysql
+
+
+*1º-salvar modificações (sempre)
+git add .
+git commit -m "commit inicial"
+
+*2º-como puxar alterações da nuvem (sempre) (CHEGUEI PARA TRABALHAR)
+git pull
+
+*3º-subir pra nuvem (sempre)
+git push
+
+
+
+
+
+
+
+
 *duplicar o arquivo .env.example e renomelo para .env,
 *depois calocar o nome do banco de dados dentro do env na variavel DB_DATABASE.
 *executar migration

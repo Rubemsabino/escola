@@ -43,7 +43,7 @@
    VOLTAR A PÁGINA PRINCIPAL
    </button>
    <h1>Professores</h1>
-   <form action="/professores/novo" method="POST">
+   <form action="/professores/salvar" method="POST">
 @csrf
       <div class="form-group">
       <label >Nome</label>
