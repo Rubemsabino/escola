@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Turmas extends Model
 {
     use HasFactory;
+    protected $table="turmas";
 }

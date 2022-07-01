@@ -39,20 +39,29 @@ EXEMPLO DA LINHA QUE DEVE SER ADICIONADA= \App\Models\Alunos::factory(20)->creat
 php artisan migrate:fresh --seed
 ____________________________________________________________________
 
+*criação de views
+(resources/views/EU:iniciar o Html normal.Obs: o nome do arquivo terá que ter no final .blade.php ex:(nomedoarquivo.blade.php)
+
+*criação da routes
+(routes/web.php/EU:iniciar PHP normal)
+
+____________________________________________________________________
+
 Git
 *inicar git no projeto (padrão só uma vez no novo Projeto)
 git init
 
 *como clonar o projeto da nuvem (padrão só uma vez nos novos PC)
-
 *abrir vscode na pasta dos projetos
-
 *Abrir terminal no vscode no menu terminal
 git clone https://github.com/Rubemsabino/escola.git
 *lembra de entrar na pasta do projeto no vscode
 composer update
 *criar banco de dados no mysql
-
+*duplicar o arquivo .env.example e renomelo para .env,
+*depois calocar o nome do banco de dados dentro do .env na variavel DB_DATABASE.
+*executar migration
+php artisan migrate:fresh --seed
 
 *1º-salvar modificações (sempre)
 git add .
@@ -69,12 +78,6 @@ git push
 
 
 
-
-
-*duplicar o arquivo .env.example e renomelo para .env,
-*depois calocar o nome do banco de dados dentro do env na variavel DB_DATABASE.
-*executar migration
-php artisan migrate:fresh --seed
 
 
 

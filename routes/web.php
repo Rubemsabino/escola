@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\Alunos;
 use App\Models\Professores;
-use App\Models\Disciplina;
-use App\Models\AlunosTurmas;
+use App\Models\disciplinas;
+use App\Models\Turmas;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +22,9 @@ Route::get('/', function () {    return view('principal');});
 
 
 // exibe formulario de alunos
-Route::get('/alunos/form', function () {    return view('aluno-form');})->name("aluno.form");
+Route::get('/alunos/form', function () {    return view('alunos-form');})->name("alunos.form");
+Route::get('/alunos/list', function () {    return view('aluno-list');})->name("aluno.list");
+
 //envias os dados para o banco de dados
 Route::post('/alunos/salvar', function (Request $request) {
     $nome=$request->input('nome');
@@ -57,32 +59,48 @@ Route::post('/professores/salvar', function (Request $request) {
 })->name("professores.salvar");
 
 // exebir formulario para cadastro de disciplina
-Route::get('/disciplina/form', function () {    return view('disciplina-form');})->name("disciplina.form");
-Route::post('disciplina/salvar', function (Request $request) {
+Route::get('/disciplinas/form', function () {    return view('disciplinas-form');})->name("disciplinas.form");
+Route::post('disciplinas/salvar', function (Request $request) {
     $nome=$request->input('nome');
 
 
-    $disciplina=new Disciplina();
+    $disciplina=new disciplinas();
     $disciplina->nome=$nome;
     $disciplina->save();
 
-    return view('disciplina-sucesso');
-})->name("disciplina.salvar");
+    return view('disciplinas-sucesso');
+})->name("disciplinas.salvar");
+
+// exibe formulario da turma
+Route::get('/turma/form', function () {    return view('turma-form');})->name("turma.form");
+//envias os dados para o banco de dados
+Route::post('/turma/salvar', function (Request $request) {
+    $nome=$request->input('nome');
+    $prof=$request->input('prof');
 
 
-Route::get('/alunos/{id}', function (Request $request,$id) {
-$aluno=Alunos::find($id);
+    $aluno=new Turmas();
+    $aluno->nome=$nome;
+    $aluno->id_professor=$prof;
+   ;
+    $aluno->save();
 
-    //dd($aluno->toString());
-return $aluno;
-
-});
+    return view('turma-sucesso');
+})->name("turma.salvar");
 
 
-Route::get('/turmas/{codigo}', function (Request $request,$codigo) {
-    $at=AlunosTurmas::where('turmas_id','=',$codigo)->get();
 
-        //dd($aluno->toString());
-    return $at;
 
-    });
+
+
+
+
+
+
+
+
+
+
+
+
+

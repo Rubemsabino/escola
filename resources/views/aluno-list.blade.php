@@ -39,20 +39,42 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
    <!--=============================formularios===========================================-->
+
    <button onclick="location='/'"class="btn btn-primary">
-   VOLTAR A PÁGINA PRINCIPAL
+    VOLTAR A PÁGINA PRINCIPAL
    </button>
-   <h1>Disciplina</h1>
-   <form action="/disciplina/salvar" method="POST">
-@csrf
-    <div class="form-group">
-      <label >Nome</label>
-      <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
 
-
-          <button type="submit" class="btn btn-primary">Enviar</button>
-  </form>
-   <!--=============================formularios formularios============================= -->
+   <H1>Alunos cadastrados</H1>
+   <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Primeiro</th>
+        <th scope="col">Último</th>
+        <th scope="col">Nickname</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+      <!--=============================formularios fim============================= -->
         </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>

@@ -37,26 +37,17 @@
                 </div>
             @endif
 
-<!-- abriar as paginas-->
+            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+   <!--=============================formularios===========================================-->
 
-
-   <button onclick="location='{{route('alunos.form')}}'"class="btn btn-primary">
-    NOVO ALUNO
+   <button onclick="location='/'"class="btn btn-primary">
+    voltar pagina principal
    </button>
-
-   <button onclick="location='/disciplinas/form'"class="btn btn-primary">
-    NOVA DISCIPLINA
+   <button onclick="location='{{route('aluno.form')}}'"class="btn btn-primary">
+    inserir nova turma
    </button>
-
-   <button onclick="location='/professores/form'"class="btn btn-primary">
-    NOVO PROFESSOR
-   </button>
-
-   <button onclick="location='/turma/form'"class="btn btn-primary">
-    NOVA TURMA
-   </button>
-
-<!-- Pills content -->
+   <H1>turma salva com sucesso</H1>
+   <!--=============================formularios fim============================= -->
         </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
