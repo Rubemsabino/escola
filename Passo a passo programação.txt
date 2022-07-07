@@ -46,7 +46,7 @@ ____________________________________________________________________
 (routes/web.php/EU:iniciar PHP normal)
 
 ____________________________________________________________________
-
+ABRIR UM PROJETO EM UM NOVO PC
 Git
 *inicar git no projeto (padrão só uma vez no novo Projeto)
 git init

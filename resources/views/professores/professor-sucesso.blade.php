@@ -42,7 +42,7 @@
    <button onclick="location='/'"class="btn btn-primary">
     voltar pagina principal
    </button>
-   <button onclick="location='{{route('aluno.form')}}'"class="btn btn-primary">
+   <button onclick="location='{{route('aluno.novo')}}'"class="btn btn-primary">
     inserir novo professor
    </button>
    <H1>Professor salvo com sucesso</H1>

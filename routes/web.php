@@ -22,11 +22,11 @@ Route::get('/', function () {    return view('principal');});
 
 
 // exibe formulario de alunos
-Route::get('/novo-aluno', function () {    return view('alunos/aluno_novo');})->name("aluno.novo");
+Route::get('/novo-aluno', function () {    return view('alunos/aluno_create');})->name("aluno.create");
 Route::get('/alunos/list', function () {    return view('aluno-list');})->name("aluno.list");
 
 //envias os dados para o banco de dados
-Route::post('/alunos/salvar', function (Request $request) {
+Route::post('/aluno_novo/salvar', function (Request $request) {
     $nome=$request->input('nome');
     $mae=$request->input('mae');
     $pai=$request->input('pai');
@@ -43,7 +43,7 @@ Route::post('/alunos/salvar', function (Request $request) {
 })->name("aluno.salvar");
 
 // exebir formulario para cadastro do professro
-Route::get('/novo_professor', function () {    return view('professores/professor_novo');})->name("professor.novo");
+Route::get('/novo_professor', function () {    return view('professores/professor_create');})->name("professor.create");
 Route::post('/professores/salvar', function (Request $request) {
     $nome=$request->input('nome');
     $celular=$request->input('celular');
@@ -55,11 +55,11 @@ Route::post('/professores/salvar', function (Request $request) {
     $professor->formacao=$formacao;
     $professor->save();
 
-    return view('professores-sucesso');
+    return view('professores/professor-sucesso');
 })->name("professores.salvar");
 
 // exebir formulario para cadastro de disciplina
-Route::get('/nova_disciplina', function () {    return view('disciplinas/disciplina_nova');})->name("disciplina.nova");
+Route::get('/nova_disciplina', function () {    return view('disciplinas/disciplina_create');})->name("disciplina.create");
 Route::post('disciplinas/salvar', function (Request $request) {
     $nome=$request->input('nome');
 
@@ -72,7 +72,7 @@ Route::post('disciplinas/salvar', function (Request $request) {
 })->name("disciplinas.salvar");
 
 // exibe formulario da turma
-Route::get('/nova_turma', function () {    return view('turmas/turma-nova');})->name("turma.nova");
+Route::get('/nova_turma', function () {    return view('turmas/turma-create');})->name("turma.create");
 //envias os dados para o banco de dados
 Route::post('/turma/salvar', function (Request $request) {
     $nome=$request->input('nome');

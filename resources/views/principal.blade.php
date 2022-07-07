@@ -40,19 +40,19 @@
 <!-- abriar as paginas-->
 
 
-   <button onclick="location='{{route('aluno.novo')}}'"class="btn btn-primary">
+   <button onclick="location='{{route('aluno.create')}}'"class="btn btn-primary">
     NOVO ALUNO
    </button>
 
-   <button onclick="location='{{route('disciplina.nova')}}'"class="btn btn-primary">
+   <button onclick="location='{{route('disciplina.create')}}'"class="btn btn-primary">
     NOVA DISCIPLINA
    </button>
 
-   <button onclick="location='{{route('professor.novo')}}'"class="btn btn-primary">
+   <button onclick="location='{{route('professor.create')}}'"class="btn btn-primary">
     NOVO PROFESSOR
    </button>
 
-   <button onclick="location='{{route('turma.nova')}}'"class="btn btn-primary">
+   <button onclick="location='{{route('turma.create')}}'"class="btn btn-primary">
     NOVA TURMA
    </button>
 
