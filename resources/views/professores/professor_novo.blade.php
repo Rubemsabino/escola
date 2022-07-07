@@ -39,38 +39,33 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
    <!--=============================formularios===========================================-->
-
    <button onclick="location='/'"class="btn btn-primary">
-    VOLTAR A PÁGINA PRINCIPAL
+   VOLTAR A PÁGINA PRINCIPAL
    </button>
-
-   <H1>Alunos</H1>
-   <form action="/alunos/salvar" method="POST">
+   <h1>Professores</h1>
+   <form action="/professores_nov." method="POST">
 @csrf
-
-    <div class="form-group">
-      <label >Nome do Aluno</label>
+      <div class="form-group">
+      <label >Nome</label>
       <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
+
     </div>
 
     <div class="form-group">
-        <label >Nome da Mãe do Aluno</label>
-        <input type="text" class="form-control" name='mae'placeholder="Digite Aqui">
-    </div>
-
-    <div class="form-group">
-        <label >Nome do Pai do Aluno</label>
-        <input type="text" class="form-control" name='pai'placeholder="Digite Aqui">
-    </div>
-
-    <div class="form-group">
-        <label >Número do Aluno</label>
+        <label >Celular</label>
         <input type="text" class="form-control" name='celular'placeholder="Digite Aqui">
-    </div>
 
-    <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+
+      <div class="form-group">
+        <label >Formação</label>
+        <input type="text" class="form-control" name='formacao'placeholder="Digite Aqui">
+
+      </div>
+
+          <button type="submit" class="btn btn-primary">Enviar</button>
   </form>
-   <!--=============================formularios fim============================= -->
+   <!--=============================formularios formularios============================= -->
         </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
