@@ -42,7 +42,7 @@
    <button onclick="location='/'"class="btn btn-primary">
    VOLTAR A PÁGINA PRINCIPAL
    </button>
-   <h1>Professores</h1>
+   <h1>Professor</h1>
    <form action="/professores_nov." method="POST">
 @csrf
       <div class="form-group">
@@ -63,8 +63,10 @@
 
       </div>
 
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
   </form>
+  <button type="submit" class="btn btn-primary">Editar</button>
+  <button type="submit" class="btn btn-primary">Deletar</button>
    <!--=============================formularios formularios============================= -->
         </div>
         </div>

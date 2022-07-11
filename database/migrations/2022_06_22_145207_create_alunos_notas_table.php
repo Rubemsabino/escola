@@ -16,8 +16,7 @@ return new class extends Migration
         Schema::create('alunos_notas', function (Blueprint $table) {
             $table->id();
             $table-> foreignId('alunos_id')->constrained();
-            $table->unsignedBigInteger('disciplina_id');
-            $table->foreign('disciplina_id')->references('id')->on('disciplina');
+            $table->foreignId('disciplinas_id')->constrained();
             $table->string('unidade');
             $table->float('projeto');
             $table->float('teste');

@@ -50,8 +50,10 @@
       <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
 
 
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
   </form>
+  <button type="submit" class="btn btn-primary">Editar</button>
+    <button type="submit" class="btn btn-primary">Deletar</button>
    <!--=============================formularios formularios============================= -->
         </div>
         </div>

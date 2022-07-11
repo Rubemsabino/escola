@@ -44,31 +44,35 @@
     VOLTAR A PÁGINA PRINCIPAL
    </button>
 
-   <H1>Alunos</H1>
+   <H1>Aluno</H1>
    <form action="/novo-aluno" method="POST">
 @csrf
 
     <div class="form-group">
-      <label >Nome do Aluno</label>
+      <label >Nome</label>
       <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
     </div>
 
     <div class="form-group">
-        <label >Nome da Mãe do Aluno</label>
+        <label >Nome da Mãe</label>
         <input type="text" class="form-control" name='mae'placeholder="Digite Aqui">
     </div>
 
     <div class="form-group">
-        <label >Nome do Pai do Aluno</label>
+        <label >Nome do Pai</label>
         <input type="text" class="form-control" name='pai'placeholder="Digite Aqui">
     </div>
 
     <div class="form-group">
-        <label >Número do Aluno</label>
+        <label >Número Celular</label>
         <input type="text" class="form-control" name='celular'placeholder="Digite Aqui">
     </div>
 
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <button type="submit" class="btn btn-primary">Editar</button>
+    <button type="submit" class="btn btn-primary">Deletar</button>
+
+
   </form>
    <!--=============================formularios fim============================= -->
         </div>

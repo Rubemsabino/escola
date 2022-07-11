@@ -44,37 +44,40 @@
     VOLTAR A PÁGINA PRINCIPAL
    </button>
 
-   <H1>Alunos cadastrados</H1>
+   <H1>Aluno Cadastrados</H1>
    <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Primeiro</th>
-        <th scope="col">Último</th>
-        <th scope="col">Nickname</th>
+        <th scope="col">id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Celular</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+
+        @foreach ( $alunos as $aluno)
+         <tr>
+            <th>{{$aluno->id}}</th>
+            <td>{{$aluno->nome}}</td>
+            <td>{{$aluno->celular}}</td>
+            <td><button onclick="location='{{route('turma.create')}}'"class="btn btn-primary">
+                Detalhes
+               </button> <button onclick="location='{{route('turma.create')}}'"class="btn btn-primary">
+                Editar
+               </button> <button onclick="location='{{route('turma.create')}}'"class="btn btn-primary">
+                Deletar
+               </button></td>
+        </tr>
+        @endforeach
+
+
     </tbody>
   </table>
-      <!--=============================formularios fim============================= -->
+
+
+
+   <!--=============================formularios fim============================= -->
         </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>

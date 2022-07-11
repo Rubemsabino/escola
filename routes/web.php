@@ -22,8 +22,12 @@ Route::get('/', function () {    return view('principal');});
 
 
 // exibe formulario de alunos
-Route::get('/novo-aluno', function () {    return view('alunos/aluno_create');})->name("aluno.create");
-Route::get('/alunos/list', function () {    return view('aluno-list');})->name("aluno.list");
+Route::get('/novo-aluno', function () {    return view('alunos.create');})->name("aluno.create");
+Route::get('/alunos/list', function () {
+    $alunos= Alunos::orderBy('nome')->get();
+    //dd($alunos);//serve para ver se chamou os alunos no BD
+    return view('alunos.lista',compact('alunos'));
+})->name("aluno.lista");
 
 //envias os dados para o banco de dados
 Route::post('/aluno_novo/salvar', function (Request $request) {

@@ -49,17 +49,19 @@
 @csrf
 
     <div class="form-group">
-      <label >Nome da Turma</label>
+      <label >Nome</label>
       <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
     </div>
 
     <div class="form-group">
-        <label >prof</label>
+        <label >Professor</label>
         <input type="text" class="form-control" name='prof'placeholder="Digite Aqui">
       </div>
 
     <button type="submit" class="btn btn-primary">Enviar</button>
   </form>
+  <button type="submit" class="btn btn-primary">Editar</button>
+    <button type="submit" class="btn btn-primary">Deletar</button>
    <!--=============================formularios fim============================= -->
         </div>
         </div>

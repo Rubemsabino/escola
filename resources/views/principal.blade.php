@@ -40,21 +40,22 @@
 <!-- abriar as paginas-->
 
 
-   <button onclick="location='{{route('aluno.create')}}'"class="btn btn-primary">
-    NOVO ALUNO
+   <button onclick="location='{{route('aluno.lista')}}'"class="btn btn-primary">
+    ALUNOS
    </button>
 
    <button onclick="location='{{route('disciplina.create')}}'"class="btn btn-primary">
-    NOVA DISCIPLINA
+    DISCIPLINA
    </button>
 
    <button onclick="location='{{route('professor.create')}}'"class="btn btn-primary">
-    NOVO PROFESSOR
+    PROFESSOR
    </button>
 
    <button onclick="location='{{route('turma.create')}}'"class="btn btn-primary">
-    NOVA TURMA
+    TURMA
    </button>
+
 
 <!-- Pills content -->
         </div>

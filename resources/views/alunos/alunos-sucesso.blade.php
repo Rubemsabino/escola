@@ -43,7 +43,7 @@
    <button onclick="location='/'"class="btn btn-primary">
     voltar pagina principal
    </button>
-   <button onclick="location='{{route('aluno.form')}}'"class="btn btn-primary">
+   <button onclick="location='{{route(novo-aluno)}}'"class="btn btn-primary">
     inserir novo aluno
    </button>
    <H1>Aluno salvo com sucesso</H1>
