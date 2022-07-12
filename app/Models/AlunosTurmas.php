@@ -12,4 +12,8 @@ class AlunosTurmas extends Model
     public function aluno(){
         return $this->belongsTo(Alunos::class);
     }
+
+    public function turma(){
+        return $this->belongsTo(Turmas::class);
+    }
 }

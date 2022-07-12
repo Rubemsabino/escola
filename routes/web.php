@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\Alunos;
 use App\Models\Professores;
-use App\Models\disciplinas;
+use App\Models\Disciplinas;
 use App\Models\Turmas;
 /*
 |--------------------------------------------------------------------------
@@ -18,93 +18,119 @@ use App\Models\Turmas;
 |
 */
 //exibe a pagina principla
-Route::get('/', function () {    return view('principal');});
+Route::get('/', function () {
+    return view('principal');
+});
 
 
 // exibe formulario de alunos
-Route::get('/novo-aluno', function () {    return view('alunos.create');})->name("aluno.create");
+Route::get('/novo-aluno', function () {
+    return view('alunos.create');
+})->name("aluno.create");
+
 Route::get('/alunos/list', function () {
-    $alunos= Alunos::orderBy('nome')->get();
+    $alunos = Alunos::orderBy('nome')->get();
     //dd($alunos);//serve para ver se chamou os alunos no BD
-    return view('alunos.lista',compact('alunos'));
+    return view('alunos.lista', compact('alunos'));
 })->name("aluno.lista");
 
-//envias os dados para o banco de dados
-Route::post('/aluno_novo/salvar', function (Request $request) {
-    $nome=$request->input('nome');
-    $mae=$request->input('mae');
-    $pai=$request->input('pai');
-    $celular=$request->input('celular');
+Route::get('/detalhes/list/{id}', function ($id) {
+    $detalhes = Alunos::find($id);
+    // $alunoTurma = $detalhes->AlunoTurma;
+    // $idTurma = @$alunoTurma->turmas_id;
+    // $turma = Turmas::find($idTurma);
+    //dd($alunos);//serve para ver se chamou os alunos no BD
+    return view('alunos.detalhes', compact('detalhes'));
+})->name("detalhe.lista");
 
-    $aluno=new Alunos;
-    $aluno->nome=$nome;
-    $aluno->nomedamae=$mae;
-    $aluno->nomedopai=$pai;
-    $aluno->celular=$celular;
+
+//envias os dados para o banco de dados
+Route::post('/alunos/salvar', function (Request $request) {
+    $nome = $request->input('nome');
+    $mae = $request->input('mae');
+    $pai = $request->input('pai');
+    $celular = $request->input('celular');
+
+    $aluno = new Alunos;
+    $aluno->nome = $nome;
+    $aluno->nomedamae = $mae;
+    $aluno->nomedopai = $pai;
+    $aluno->celular = $celular;
     $aluno->save();
 
-    return view('aluno-sucesso');
+    return view('alunos.sucesso');
 })->name("aluno.salvar");
 
 // exebir formulario para cadastro do professro
-Route::get('/novo_professor', function () {    return view('professores/professor_create');})->name("professor.create");
-Route::post('/professores/salvar', function (Request $request) {
-    $nome=$request->input('nome');
-    $celular=$request->input('celular');
-    $formacao=$request->input('formacao');
+Route::get('/novo_professor', function () {
+    return view('professores/professor_create');
+})->name("professor.create");
 
-    $professor=new Professores();
-    $professor->nome=$nome;
-    $professor->celular=$celular;
-    $professor->formacao=$formacao;
+Route::get('/professores/list', function () {
+    $professores = professores::orderBy('nome')->get();
+    //dd($alunos);//serve para ver se chamou os alunos no BD
+    return view('professores.lista', compact('professores'));
+})->name("professore.lista");
+
+Route::post('/professores/salvar', function (Request $request) {
+    $nome = $request->input('nome');
+    $celular = $request->input('celular');
+    $formacao = $request->input('formacao');
+
+    $professor = new Professores();
+    $professor->nome = $nome;
+    $professor->celular = $celular;
+    $professor->formacao = $formacao;
     $professor->save();
 
     return view('professores/professor-sucesso');
 })->name("professores.salvar");
 
 // exebir formulario para cadastro de disciplina
-Route::get('/nova_disciplina', function () {    return view('disciplinas/disciplina_create');})->name("disciplina.create");
+Route::get('/nova_disciplina', function () {
+    return view('disciplinas/disciplina_create');
+})->name("disciplina.create");
+
+Route::get('/disciplinas/list', function () {
+    $disciplinas = disciplinas::orderBy('nome')->get();
+    //dd($alunos);//serve para ver se chamou os alunos no BD
+    return view('disciplinas.lista', compact('disciplinas'));
+})->name("disciplina.lista");
+
+
+
 Route::post('disciplinas/salvar', function (Request $request) {
-    $nome=$request->input('nome');
+    $nome = $request->input('nome');
 
 
-    $disciplina=new disciplinas();
-    $disciplina->nome=$nome;
+    $disciplina = new disciplinas();
+    $disciplina->nome = $nome;
     $disciplina->save();
 
     return view('disciplinas-sucesso');
 })->name("disciplinas.salvar");
 
 // exibe formulario da turma
-Route::get('/nova_turma', function () {    return view('turmas/turma-create');})->name("turma.create");
+Route::get('/nova_turma', function () {
+    return view('turmas/turma-create');
+})->name("turma.create");
+
+Route::get('/turmas/list', function () {
+    $turmas = turmas::orderBy('nome')->get();
+    //dd($alunos);//serve para ver se chamou os alunos no BD
+    return view('turmas.lista', compact('turmas'));
+})->name("turma.lista");
+
 //envias os dados para o banco de dados
 Route::post('/turma/salvar', function (Request $request) {
-    $nome=$request->input('nome');
-    $prof=$request->input('prof');
+    $nome = $request->input('nome');
+    $prof = $request->input('prof');
 
 
-    $aluno=new Turmas();
-    $aluno->nome=$nome;
-    $aluno->id_professor=$prof;
-   ;
+    $aluno = new Turmas();
+    $aluno->nome = $nome;
+    $aluno->id_professor = $prof;
     $aluno->save();
 
     return view('turma-sucesso');
 })->name("turma.salvar");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

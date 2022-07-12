@@ -9,7 +9,7 @@ class Alunos extends Model
 {
     use HasFactory;
 
-    public function turma() {
-        return $this->hasOne(Turmas::class);
+    public function AlunoTurma() {
+        return $this->hasOne(AlunosTurmas::class);
     }
 }

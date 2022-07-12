@@ -427,32 +427,35 @@
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <!--=============================formularios===========================================-->
 
-            <button onclick="location='{{ route('aluno.create') }}'"class="btn btn-primary">
-                NOVO ALUNO
-            </button>
-
             <button onclick="location='/'"class="btn btn-primary">
                 VOLTAR A PÁGINA PRINCIPAL
             </button>
 
-            <H1>Alunos Cadastrados</H1>
+            <H1>Disciplinas Cadastradas</H1>
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">id</th>
-                        <th scope="col">Aluno</th>
+                        <th scope="col">Nome</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    @foreach ($alunos as $aluno)
+                    @foreach ($disciplinas as $disciplina)
                         <tr>
-                            <th>{{ $aluno->id }}</th>
-                            <td>{{ $aluno->nome }}</td>
-                            <td><button onclick="location='{{ route('detalhe.lista',$aluno->id) }}'"class="btn btn-primary">
+                            <th>{{ $disciplina->id }}</th>
+                            <td>{{ $disciplina->nome }}</td>
+                            <td>{{ $disciplina->celular }}</td>
+                            <td><button onclick="location='{{ route('turma.create') }}'"class="btn btn-primary">
                                     Detalhes
-                                </button>
+                                </button> <button
+                                    onclick="location='{{ route('turma.create') }}'"class="btn btn-primary">
+                                    Editar
+                                </button> <button
+                                    onclick="location='{{ route('turma.create') }}'"class="btn btn-primary">
+                                    Deletar
+                                </button></td>
                         </tr>
                     @endforeach
 

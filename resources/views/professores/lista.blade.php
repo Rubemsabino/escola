@@ -44,24 +44,39 @@
     VOLTAR A PÁGINA PRINCIPAL
    </button>
 
-   <H1>Turma</H1>
-   <form action="/turma/salvar" method="POST">
-@csrf
+   <H1>Professores Cadastrados</H1>
+   <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">formacao</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
 
-    <div class="form-group">
-      <label >Nome</label>
-      <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
-    </div>
+        @foreach ( $professores as $professore)
+         <tr>
+            <th>{{$professore->id}}</th>
+            <td>{{$professore->nome}}</td>
+            <td>{{$professore->celular}}</td>
+            <td><button onclick="location='{{route('turma.create')}}'"class="btn btn-primary">
+                Detalhes
+               </button> <button onclick="location='{{route('turma.create')}}'"class="btn btn-primary">
+                Editar
+               </button> <button onclick="location='{{route('turma.create')}}'"class="btn btn-primary">
+                Deletar
+               </button></td>
+        </tr>
+        @endforeach
 
-    <div class="form-group">
-        <label >Professor</label>
-        <input type="text" class="form-control" name='prof'placeholder="Digite Aqui">
-      </div>
 
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </form>
-  <button class="btn btn-primary">Editar</button>
-    <button class="btn btn-primary" onclick="confirm('Quer deletar esse aluno?')?location='{{route('aluno.create')}}':''">Deletar</button>
+    </tbody>
+  </table>
+
+
+
    <!--=============================formularios fim============================= -->
         </div>
         </div>

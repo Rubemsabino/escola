@@ -41,27 +41,13 @@
    <!--=============================formularios===========================================-->
 
    <button onclick="location='/'"class="btn btn-primary">
-    VOLTAR A PÁGINA PRINCIPAL
+    voltar pagina principal
    </button>
+   <button onclick="location='{{route('aluno.create')}}'"class="btn btn-primary">
+    inserir novo aluno
+   </button>
+   <H1>Aluno salvo com sucesso</H1>
 
-   <H1>Turma</H1>
-   <form action="/turma/salvar" method="POST">
-@csrf
-
-    <div class="form-group">
-      <label >Nome</label>
-      <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
-    </div>
-
-    <div class="form-group">
-        <label >Professor</label>
-        <input type="text" class="form-control" name='prof'placeholder="Digite Aqui">
-      </div>
-
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </form>
-  <button class="btn btn-primary">Editar</button>
-    <button class="btn btn-primary" onclick="confirm('Quer deletar esse aluno?')?location='{{route('aluno.create')}}':''">Deletar</button>
    <!--=============================formularios fim============================= -->
         </div>
         </div>

@@ -45,7 +45,7 @@
    </button>
 
    <H1>Aluno</H1>
-   <form action="/novo-aluno" method="POST">
+   <form action="{{route('aluno.salvar')}}" method="POST">
 @csrf
 
     <div class="form-group">
@@ -69,8 +69,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Cadastrar</button>
-    <button type="submit" class="btn btn-primary">Editar</button>
-    <button type="submit" class="btn btn-primary">Deletar</button>
+
 
 
   </form>
