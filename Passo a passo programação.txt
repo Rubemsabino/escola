@@ -25,7 +25,7 @@ php artisan make:migration CreateAlunosTable
 (database/migrate/ EU:abrir a migration e criar campos das tabelas)
 
 *executar migration
-php artisan migrate:fresh
+php artisan migrate:fresh --seed
 
 *criar arquivos para popular tabelas com dados fakes
 php artisan make:model Alunos --factory
@@ -73,6 +73,9 @@ git pull
 *3º-subir pra nuvem (sempre)
 git push
 
+____________________________________________________________________
+*Criar controler
+php artisan make:controller AlunosController --resource
 
 
 

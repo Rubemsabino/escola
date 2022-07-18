@@ -450,6 +450,9 @@
                             <td><button onclick="location='{{ route('aluno.create') }}'"class="btn btn-primary">
                                     Editar
                                 </button>
+                                <button onclick="location='{{ route('deletar.aluno') }}'"class="btn btn-primary">
+                                    Deletar
+                                </button>
                         </tr>
 
 

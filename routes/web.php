@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Aluno;
+use App\Http\Controllers\AlunosController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\Alunos;
@@ -22,44 +23,12 @@ Route::get('/', function () {
     return view('menu');
 });
 
-            //ALUNOS
-// exibe formulario de alunos
-Route::get('/novo-aluno', function () {
-    return view('alunos.create');
-})->name("aluno.create");
+Route::get('/alunos/criar',  [AlunosController::class, 'create'])->name("aluno.create");
+Route::get('/alunos/listar', [AlunosController::class,'index'])->name("aluno.lista");
+Route::get('/alunos/detalhes/{id}',[AlunosController::class,'show'])->name("detalhe_ALUNO.lista");
+Route::post('/alunos/salvar', [AlunosController::class,'store'])->name("aluno.salvar");
+Route::get ('/alunos/deletar/{id}', [AlunosController::class,'destroy'])->name("deletar.aluno");
 
-Route::get('/alunos/list', function () {
-    $alunos = Alunos::orderBy('nome')->get();
-    //dd($alunos);//serve para ver se chamou os alunos no BD
-    return view('alunos.lista', compact('alunos'));
-})->name("aluno.lista");
-
-Route::get('/detalhes_ALUNOS/list/{id}', function ($id) {
-    $detalhes = Alunos::find($id);
-    // $alunoTurma = $detalhes->AlunoTurma;
-    // $idTurma = @$alunoTurma->turmas_id;
-    // $turma = Turmas::find($idTurma);
-    //dd($alunos);//serve para ver se chamou os alunos no BD
-    return view('alunos.detalhes', compact('detalhes'));
-})->name("detalhe_ALUNO.lista");
-
-
-//envias os dados para o banco de dados
-Route::post('/alunos/salvar', function (Request $request) {
-    $nome = $request->input('nome');
-    $mae = $request->input('mae');
-    $pai = $request->input('pai');
-    $celular = $request->input('celular');
-
-    $aluno = new Alunos;
-    $aluno->nome = $nome;
-    $aluno->nomedamae = $mae;
-    $aluno->nomedopai = $pai;
-    $aluno->celular = $celular;
-    $aluno->save();
-
-    return view('alunos.sucesso');
-})->name("aluno.salvar");
 
             //PROFESSOR
 // exebir formulario para cadastro do professro
