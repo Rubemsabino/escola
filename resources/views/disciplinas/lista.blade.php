@@ -426,6 +426,9 @@
 
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <!--=============================formularios===========================================-->
+            <button onclick="location='{{ route('disciplina.create') }}'"class="btn btn-primary">
+                NOVA DISCIPLINA
+            </button>
 
             <button onclick="location='/'"class="btn btn-primary">
                 VOLTAR A PÁGINA PRINCIPAL
@@ -436,26 +439,19 @@
                 <thead>
                     <tr>
                         <th scope="col">id</th>
-                        <th scope="col">Nome</th>
+                        <th scope="col">Disciplinas</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    @foreach ($disciplinas as $disciplina)
+                @foreach ($disciplinas as $disciplina)
                         <tr>
                             <th>{{ $disciplina->id }}</th>
                             <td>{{ $disciplina->nome }}</td>
-                            <td>{{ $disciplina->celular }}</td>
-                            <td><button onclick="location='{{ route('turma.create') }}'"class="btn btn-primary">
+                            <td><button onclick="location='{{ route('detalhe_DISCIPLINA.lista',$disciplina->id) }}'"class="btn btn-primary">
                                     Detalhes
-                                </button> <button
-                                    onclick="location='{{ route('turma.create') }}'"class="btn btn-primary">
-                                    Editar
-                                </button> <button
-                                    onclick="location='{{ route('turma.create') }}'"class="btn btn-primary">
-                                    Deletar
-                                </button></td>
+                                </button>
                         </tr>
                     @endforeach
 

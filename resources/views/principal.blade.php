@@ -431,12 +431,12 @@
             ALUNOS
         </button>
 
-        <button onclick="location='{{ route('disciplina.lista') }}'"class="btn btn-primary">
-            DISCIPLINA
+        <button onclick="location='{{ route('professor.lista') }}'"class="btn btn-primary">
+            PROFESSOR
         </button>
 
-        <button onclick="location='{{ route('professore.lista') }}'"class="btn btn-primary">
-            PROFESSOR
+        <button onclick="location='{{ route('disciplina.lista') }}'"class="btn btn-primary">
+            DISCIPLINA
         </button>
 
         <button onclick="location='{{ route('turma.lista') }}'"class="btn btn-primary">

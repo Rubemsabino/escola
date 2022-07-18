@@ -39,16 +39,17 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
    <!--=============================formularios===========================================-->
-
    <button onclick="location='/'"class="btn btn-primary">
     voltar pagina principal
    </button>
-   <button onclick="location='{{route('aluno.form')}}'"class="btn btn-primary">
-    inserir nova disciplina
+   <button onclick="location='{{route('professor.create')}}'"class="btn btn-primary">
+    inserir novo professor
    </button>
-   <H1>Disciplina salvo com sucesso</H1>
+   <H1>Professor salvo com sucesso</H1>
    
    <!--=============================formularios fim============================= -->
+  </form>
+   <!--=============================formularios formularios============================= -->
         </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>

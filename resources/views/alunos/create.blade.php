@@ -44,7 +44,7 @@
     VOLTAR A PÁGINA PRINCIPAL
    </button>
 
-   <H1>Aluno</H1>
+   <H1>NOVO ALUNO</H1>
    <form action="{{route('aluno.salvar')}}" method="POST">
 @csrf
 

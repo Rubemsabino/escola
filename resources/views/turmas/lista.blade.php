@@ -426,6 +426,9 @@
 
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <!--=============================formularios===========================================-->
+            <button onclick="location='{{ route('turma.create') }}'"class="btn btn-primary">
+                NOVA TURMA
+            </button>
 
             <button onclick="location='/'"class="btn btn-primary">
                 VOLTAR A PÁGINA PRINCIPAL
@@ -435,27 +438,22 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">Nome</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Turma</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    @foreach ($turmas as $turma)
-                        <tr>
-                            <td>{{ $turma->nome }}</td>
-                            <td>{{ $turma->celular }}</td>
-                            <td><button onclick="location='{{ route('turma.create') }}'"class="btn btn-primary">
-                                    Detalhes
-                                </button> <button
-                                    onclick="location='{{ route('turma.create') }}'"class="btn btn-primary">
-                                    Editar
-                                </button> <button
-                                    onclick="location='{{ route('turma.create') }}'"class="btn btn-primary">
-                                    Deletar
-                                </button></td>
-                        </tr>
-                    @endforeach
+                @foreach ($turmas as $turma)
+            <tr>
+            <th>{{$turma->id}}</th>
+            <td>{{$turma->nome}}</td>
+            <td><button onclick="location='{{ route('detalhe_TURMA.lista',$turma->id) }}'"class="btn btn-primary">
+        Detalhes
+    </button>
+            </tr>
+        @endforeach
 
 
                 </tbody>

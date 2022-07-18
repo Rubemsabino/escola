@@ -427,34 +427,31 @@
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <!--=============================formularios===========================================-->
 
-            <button onclick="location='{{ route('aluno.create') }}'"class="btn btn-primary">
-                NOVO ALUNO
-            </button>   
-
             <button onclick="location='/'"class="btn btn-primary">
                 VOLTAR A PÁGINA PRINCIPAL
             </button>
 
-            <H1>Alunos Cadastrados</H1>
+            <H1>Detalhes</H1>
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">id</th>
-                        <th scope="col">Aluno</th>
-                        <th scope="col"></th>
+                        <th scope="col">Turma</th>
+                        <th scope="col">Professor</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    @foreach ($alunos as $aluno)
+
                         <tr>
-                            <th>{{ $aluno->id }}</th>
-                            <td>{{ $aluno->nome }}</td>
-                            <td><button onclick="location='{{ route('detalhe_ALUNO.lista',$aluno->id) }}'"class="btn btn-primary">
-                                    Detalhes
+                            <th>{{ $detalhes->id }}</th>
+                            <td>{{ $detalhes->nome }}</td>
+                            <td>{{ $detalhes->id_professor }}</td>
+                            <td><button onclick="location='{{ route('aluno.create') }}'"class="btn btn-primary">
+                                    Editar
                                 </button>
                         </tr>
-                    @endforeach
+
 
 
                 </tbody>

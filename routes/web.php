@@ -19,10 +19,10 @@ use App\Models\Turmas;
 */
 //exibe a pagina principla
 Route::get('/', function () {
-    return view('principal');
+    return view('menu');
 });
 
-
+            //ALUNOS
 // exibe formulario de alunos
 Route::get('/novo-aluno', function () {
     return view('alunos.create');
@@ -34,14 +34,14 @@ Route::get('/alunos/list', function () {
     return view('alunos.lista', compact('alunos'));
 })->name("aluno.lista");
 
-Route::get('/detalhes/list/{id}', function ($id) {
+Route::get('/detalhes_ALUNOS/list/{id}', function ($id) {
     $detalhes = Alunos::find($id);
     // $alunoTurma = $detalhes->AlunoTurma;
     // $idTurma = @$alunoTurma->turmas_id;
     // $turma = Turmas::find($idTurma);
     //dd($alunos);//serve para ver se chamou os alunos no BD
     return view('alunos.detalhes', compact('detalhes'));
-})->name("detalhe.lista");
+})->name("detalhe_ALUNO.lista");
 
 
 //envias os dados para o banco de dados
@@ -61,16 +61,22 @@ Route::post('/alunos/salvar', function (Request $request) {
     return view('alunos.sucesso');
 })->name("aluno.salvar");
 
+            //PROFESSOR
 // exebir formulario para cadastro do professro
 Route::get('/novo_professor', function () {
-    return view('professores/professor_create');
+    return view('professores.create');
 })->name("professor.create");
 
 Route::get('/professores/list', function () {
     $professores = professores::orderBy('nome')->get();
     //dd($alunos);//serve para ver se chamou os alunos no BD
     return view('professores.lista', compact('professores'));
-})->name("professore.lista");
+})->name("professor.lista");
+
+Route::get('/detalhes_PROFESSORES/list/{id}', function ($id) {
+    $detalhes = professores::find($id);
+    return view('professores.detalhes', compact('detalhes'));
+})->name("detalhe_PROFESSOR.lista");
 
 Route::post('/professores/salvar', function (Request $request) {
     $nome = $request->input('nome');
@@ -83,21 +89,24 @@ Route::post('/professores/salvar', function (Request $request) {
     $professor->formacao = $formacao;
     $professor->save();
 
-    return view('professores/professor-sucesso');
-})->name("professores.salvar");
+    return view('professores.sucesso');
+})->name("professor.salvar");
 
+            //DISCIPLINA
 // exebir formulario para cadastro de disciplina
 Route::get('/nova_disciplina', function () {
-    return view('disciplinas/disciplina_create');
+    return view('disciplinas.create');
 })->name("disciplina.create");
 
 Route::get('/disciplinas/list', function () {
     $disciplinas = disciplinas::orderBy('nome')->get();
-    //dd($alunos);//serve para ver se chamou os alunos no BD
     return view('disciplinas.lista', compact('disciplinas'));
 })->name("disciplina.lista");
 
-
+Route::get('/detalhes_DISCIPLINAS/list/{id}', function ($id) {
+    $detalhes = disciplinas::find($id);
+    return view('disciplinas.detalhes', compact('detalhes'));
+})->name("detalhe_DISCIPLINA.lista");
 
 Route::post('disciplinas/salvar', function (Request $request) {
     $nome = $request->input('nome');
@@ -107,12 +116,13 @@ Route::post('disciplinas/salvar', function (Request $request) {
     $disciplina->nome = $nome;
     $disciplina->save();
 
-    return view('disciplinas-sucesso');
+    return view('disciplinas.sucesso');
 })->name("disciplinas.salvar");
 
+            //TURMAS
 // exibe formulario da turma
 Route::get('/nova_turma', function () {
-    return view('turmas/turma-create');
+    return view('turmas.create');
 })->name("turma.create");
 
 Route::get('/turmas/list', function () {
@@ -120,6 +130,11 @@ Route::get('/turmas/list', function () {
     //dd($alunos);//serve para ver se chamou os alunos no BD
     return view('turmas.lista', compact('turmas'));
 })->name("turma.lista");
+
+Route::get('/detalhes_TURMAS/list/{id}', function ($id) {
+    $detalhes = turmas::find($id);
+    return view('turmas.detalhes', compact('detalhes'));
+})->name("detalhe_TURMA.lista");
 
 //envias os dados para o banco de dados
 Route::post('/turma/salvar', function (Request $request) {
@@ -134,3 +149,4 @@ Route::post('/turma/salvar', function (Request $request) {
 
     return view('turma-sucesso');
 })->name("turma.salvar");
+

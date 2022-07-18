@@ -39,43 +39,29 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
    <!--=============================formularios===========================================-->
-   <button onclick="location='{{ route('professor.create') }}'"class="btn btn-primary">
-                NOVO PROFESSOR
-            </button>
 
    <button onclick="location='/'"class="btn btn-primary">
     VOLTAR A PÁGINA PRINCIPAL
    </button>
 
-   <H1>Professores Cadastrados</H1>
-   <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">id</th>
-        <th scope="col">Nome</th>
-        <th scope="col">formacao</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
+   <H1>NOVA TURMA</H1>
+   <form action="/turma/salvar" method="POST">
+@csrf
 
-        @foreach ($professores as $professore)
-            <tr>
-            <th>{{$professore->id}}</th>
-            <td>{{$professore->nome}}</td>
-                <td><button onclick="location='{{ route('detalhe_PROFESSOR.lista',$professore->id) }}'"class="btn btn-primary">
-                        Detalhes
-                    </button>
-            </tr>
-        @endforeach
-      
+    <div class="form-group">
+      <label >Nome</label>
+      <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
+    </div>
 
+    <div class="form-group">
+        <label >Professor</label>
+        <input type="text" class="form-control" name='prof'placeholder="Digite Aqui">
+      </div>
 
-    </tbody>
-  </table>
-
-
-
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+  <button class="btn btn-primary">Editar</button>
+    <button class="btn btn-primary" onclick="confirm('Quer deletar esse aluno?')?location='{{route('aluno.create')}}':''">Deletar</button>
    <!--=============================formularios fim============================= -->
         </div>
         </div>
