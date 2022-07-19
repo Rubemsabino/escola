@@ -430,11 +430,7 @@
 
             <button onclick="location='{{ route('aluno.create') }}'"class="btn btn-primary">
                 NOVO ALUNO
-            </button>
-
-            <button onclick="location='/'"class="btn btn-primary">
-                VOLTAR A PÁGINA PRINCIPAL
-            </button>
+            </button>       
 
             <H1>Alunos Cadastrados</H1>
             <table class="table table-hover">

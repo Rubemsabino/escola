@@ -22,6 +22,7 @@
         </style>
     </head>
     <body class="antialiased">
+    @include('menu')
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -39,8 +40,8 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
    <!--=============================formularios===========================================-->
-   <button onclick="location='/'"class="btn btn-primary">
-   VOLTAR A PÁGINA PRINCIPAL
+   <button onclick="location='{{route('professor.lista')}}'"class="btn btn-primary">
+   VOLTAR PÁGINA
    </button>
    <h1>NOVO PROFESSOR</h1>
    <form action="{{route('professor.salvar')}}" method="POST">           

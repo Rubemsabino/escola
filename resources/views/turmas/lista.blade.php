@@ -407,6 +407,7 @@
 </head>
 
 <body class="antialiased">
+@include('menu')
     <div
         class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
         @if (Route::has('login'))
@@ -430,9 +431,7 @@
                 NOVA TURMA
             </button>
 
-            <button onclick="location='/'"class="btn btn-primary">
-                VOLTAR A PÁGINA PRINCIPAL
-            </button>
+           
 
             <H1>Turmas Cadastradas</H1>
             <table class="table table-hover">
@@ -447,15 +446,15 @@
 
                 @foreach ($turmas as $turma)
             <tr>
-            <th>{{$turma->id}}</th>
-            <td>{{$turma->nome}}</td>
-            <td><button onclick="location='{{ route('detalhe_TURMA.lista',$turma->id) }}'"class="btn btn-primary">
+                <th>{{$turma->id}}</th>
+                <td>{{$turma->nome}}</td>
+                <td><button onclick="location='{{ route('detalhe_TURMA.lista',$turma->id) }}'"class="btn btn-primary">
         Detalhes
     </button>
             </tr>
         @endforeach
 
-
+   
                 </tbody>
             </table>
 

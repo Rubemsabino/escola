@@ -407,6 +407,7 @@
 </head>
 
 <body class="antialiased">
+@include('menu')
     <div
         class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
         @if (Route::has('login'))
@@ -450,6 +451,9 @@
                             <td><button onclick="location='{{ route('disciplina.create') }}'"class="btn btn-primary">
                                     Editar
                                 </button>
+                                <button onclick="deletar()"class="btn btn-primary">
+                                    Deletar
+                                </button>
                         </tr>
 
 
@@ -467,6 +471,20 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
         integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
+    </script>
+<script>
+        function deletar(){
+           const pergunta=confirm('Deseja Realmete Deletar');
+           if (pergunta) {
+            location="{{ route('deletar.disciplina',$detalhes->id ) }}"
+
+           } else {
+
+           }
+
+        }
+    </script>
+
     </script>
 </body>
 

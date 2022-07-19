@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class AlunosController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. / Exibir uma listagem do recurso.
      *
      * @return \Illuminate\Http\Response
      */
@@ -20,7 +20,7 @@ class AlunosController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new resource. / Mostre o formulário para criar um novo recurso.
      *
      * @return \Illuminate\Http\Response
      */
@@ -30,7 +30,7 @@ class AlunosController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storage. / Armazene um recurso recém-criado no armazenamento.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -54,7 +54,7 @@ class AlunosController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resource. / Exibir o recurso especificado.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -66,7 +66,7 @@ class AlunosController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified resource. / Mostre o formulário para editar o recurso especificado.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -77,7 +77,7 @@ class AlunosController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified resource in storage. / Atualize o recurso especificado no armazenamento
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -89,7 +89,7 @@ class AlunosController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified resource from storage. / 
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

@@ -407,6 +407,7 @@
 </head>
 
 <body class="antialiased">
+@include('menu')
     <div
         class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
         @if (Route::has('login'))
@@ -427,8 +428,8 @@
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <!--=============================formularios===========================================-->
 
-            <button onclick="location='/'"class="btn btn-primary">
-                VOLTAR A PÁGINA PRINCIPAL
+            <button onclick="location='{{route('professor.lista')}}'"class="btn btn-primary">
+                VOLTAR PÁGINA
             </button>
 
             <H1>Detalhes</H1>
@@ -437,7 +438,7 @@
                     <tr>
                         <th scope="col">id</th>
                         <th scope="col">Professor</th>
-                        <th scope="col">formacao</th>
+                        <th scope="col">formacão</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -450,6 +451,9 @@
                            
                             <td><button onclick="location='{{ route('professor.create') }}'"class="btn btn-primary">
                                     Editar
+                                </button>
+                                <button onclick="deletar()"class="btn btn-primary">
+                                    Deletar
                                 </button>
                         </tr>
 
@@ -468,6 +472,18 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
         integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
+    </script>
+    <script>
+        function deletar(){
+           const pergunta=confirm('Deseja Realmete Deletar');
+           if (pergunta) {
+            location="{{ route('deletar.professor',$detalhes->id ) }}"
+
+           } else {
+
+           }
+
+        }
     </script>
 </body>
 

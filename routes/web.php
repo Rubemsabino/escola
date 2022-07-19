@@ -1,7 +1,11 @@
 <?php
 
-use App\Http\Controllers\Aluno;
+
 use App\Http\Controllers\AlunosController;
+use App\Http\Controllers\DisciplinasController;
+use App\Http\Controllers\ProfessoresController;
+
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\Alunos;
@@ -23,70 +27,23 @@ Route::get('/', function () {
     return view('menu');
 });
 
-Route::get('/alunos/criar',  [AlunosController::class, 'create'])->name("aluno.create");
 Route::get('/alunos/listar', [AlunosController::class,'index'])->name("aluno.lista");
-Route::get('/alunos/detalhes/{id}',[AlunosController::class,'show'])->name("detalhe_ALUNO.lista");
+Route::get('/alunos/criar',  [AlunosController::class, 'create'])->name("aluno.create");
 Route::post('/alunos/salvar', [AlunosController::class,'store'])->name("aluno.salvar");
+Route::get('/alunos/detalhes/{id}',[AlunosController::class,'show'])->name("detalhe_ALUNO.lista");
 Route::get ('/alunos/deletar/{id}', [AlunosController::class,'destroy'])->name("deletar.aluno");
 
+Route::get('/disciplinas/list', [DisciplinasController::class,'index'])->name("disciplina.lista");
+Route::get('/disciplina/criar', [DisciplinasController::class, 'create'])->name("disciplina.create");
+Route::post('disciplinas/salvar', [DisciplinasController::class,'store'])->name("disciplinas.salvar");
+Route::get('/disciplinas/detalhes/{id}', [DisciplinasController::class,'show'])->name("detalhe_DISCIPLINA.lista");
+Route::get ('/disciplinas/deletar/{id}', [DisciplinasController::class,'destroy'])->name("deletar.disciplina");
 
-            //PROFESSOR
-// exebir formulario para cadastro do professro
-Route::get('/novo_professor', function () {
-    return view('professores.create');
-})->name("professor.create");
-
-Route::get('/professores/list', function () {
-    $professores = professores::orderBy('nome')->get();
-    //dd($alunos);//serve para ver se chamou os alunos no BD
-    return view('professores.lista', compact('professores'));
-})->name("professor.lista");
-
-Route::get('/detalhes_PROFESSORES/list/{id}', function ($id) {
-    $detalhes = professores::find($id);
-    return view('professores.detalhes', compact('detalhes'));
-})->name("detalhe_PROFESSOR.lista");
-
-Route::post('/professores/salvar', function (Request $request) {
-    $nome = $request->input('nome');
-    $celular = $request->input('celular');
-    $formacao = $request->input('formacao');
-
-    $professor = new Professores();
-    $professor->nome = $nome;
-    $professor->celular = $celular;
-    $professor->formacao = $formacao;
-    $professor->save();
-
-    return view('professores.sucesso');
-})->name("professor.salvar");
-
-            //DISCIPLINA
-// exebir formulario para cadastro de disciplina
-Route::get('/nova_disciplina', function () {
-    return view('disciplinas.create');
-})->name("disciplina.create");
-
-Route::get('/disciplinas/list', function () {
-    $disciplinas = disciplinas::orderBy('nome')->get();
-    return view('disciplinas.lista', compact('disciplinas'));
-})->name("disciplina.lista");
-
-Route::get('/detalhes_DISCIPLINAS/list/{id}', function ($id) {
-    $detalhes = disciplinas::find($id);
-    return view('disciplinas.detalhes', compact('detalhes'));
-})->name("detalhe_DISCIPLINA.lista");
-
-Route::post('disciplinas/salvar', function (Request $request) {
-    $nome = $request->input('nome');
-
-
-    $disciplina = new disciplinas();
-    $disciplina->nome = $nome;
-    $disciplina->save();
-
-    return view('disciplinas.sucesso');
-})->name("disciplinas.salvar");
+Route::get('/professores/list', [ProfessoresController::class,'index'])->name("professor.lista");
+Route::get('/professores/criar', [ProfessoresController::class, 'create'])->name("professor.create");
+Route::post('/professores/salvar', [ProfessoresController::class,'store'])->name("professor.salvar");
+Route::get('/professores/detalhes/{id}', [ProfessoresController::class,'show'])->name("detalhe_PROFESSOR.lista");
+Route::get ('/professores/deletar/{id}', [ProfessoresController::class,'destroy'])->name("deletar.professor");
 
             //TURMAS
 // exibe formulario da turma
