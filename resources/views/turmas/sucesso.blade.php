@@ -40,21 +40,15 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
    <!--=============================formularios===========================================-->
-   <button onclick="location='{{route('disciplina.lista')}}'"class="btn btn-primary">
-   VOLTAR PÁGINA
+
+   <button onclick="location='{{route('turma.lista')}}'"class="btn btn-primary">
+    VOLTAR PÁGINA
    </button>
-   <h1>NOVA DISCIPLINA</h1>
-   <form action="/disciplinas/salvar" method="POST">
-@csrf
-    <div class="form-group">
-      <label >Nome</label>
-      <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
-
-
-          <button type="submit" class="btn btn-primary">Cadastrar</button>
-  </form>
- 
-   <!--=============================formularios formularios============================= -->
+   <button onclick="location='{{route('turma.create')}}'"class="btn btn-primary">
+    inserir nova turma
+   </button>
+   <H1>{{$mensagem}}</H1>
+   <!--=============================formularios fim============================= -->
         </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>

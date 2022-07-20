@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Disciplinas;
+use App\Models\Professores;
+use App\Models\Turmas;
 use Illuminate\Http\Request;
 
-
-class DisciplinasController extends Controller
+class TurmasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class DisciplinasController extends Controller
      */
     public function index()
     {
-        $disciplinas = Disciplinas::orderBy('nome')->get();
-        return view('disciplinas.lista', compact('disciplinas'));
+        $turmas = Turmas::orderBy('nome')->get();
+    return view('turmas.lista', compact('turmas'));
     }
 
     /**
@@ -26,7 +26,8 @@ class DisciplinasController extends Controller
      */
     public function create()
     {
-        return view('disciplinas.create');
+        $professores= Professores::orderBy('nome')->get();
+        return view('turmas.create', compact('professores'));
     }
 
     /**
@@ -38,12 +39,16 @@ class DisciplinasController extends Controller
     public function store(Request $request)
     {
         $nome = $request->input('nome');
-        $disciplina = new disciplinas();
-        $disciplina->nome = $nome;
-        $disciplina->save();
+        $prof = $request->input('prof');
 
-        $mensagem = 'Disciplina Salva!';
-        return view('disciplinas.sucesso', compact('mensagem'));
+
+        $aluno = new Turmas();
+        $aluno->nome = $nome;
+        $aluno->id_professor = $prof;
+        $aluno->save();
+
+        $mensagem = 'Turma Salva!';
+        return view('turmas.sucesso', compact('mensagem'));
     }
 
     /**
@@ -54,8 +59,8 @@ class DisciplinasController extends Controller
      */
     public function show($id)
     {
-        $detalhes = Disciplinas::find($id);
-        return view('disciplinas.detalhes', compact('detalhes'));
+        $detalhes = Turmas::find($id);
+        return view('turmas.detalhes', compact('detalhes'));
     }
 
     /**
@@ -89,8 +94,8 @@ class DisciplinasController extends Controller
      */
     public function destroy($id)
     {
-        Disciplinas::destroy($id);
-        $mensagem = 'Disciplina Excluida!';
-        return view('disciplinas.sucesso', compact('mensagem'));
+        Turmas::destroy($id);
+        $mensagem = 'Turma Excluido!';
+        return view('turmas.sucesso', compact('mensagem'));
     }
 }

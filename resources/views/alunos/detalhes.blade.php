@@ -452,7 +452,7 @@
                             <td>{{ $detalhes->nomedamae }}</td>
                             <td>{{ $detalhes->nomedopai }}</td>
                             <td>{{ $detalhes->celular }}</td>
-                            <td><button onclick="location='{{ route('aluno.create') }}'"class="btn btn-primary">
+                            <td><button onclick="location='{{ route('editar.aluno',$detalhes->id) }}'"class="btn btn-primary">
                                     Editar
                                 </button>
                                 <button onclick="deletar()"class="btn btn-primary">

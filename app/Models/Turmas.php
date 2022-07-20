@@ -13,4 +13,8 @@ class Turmas extends Model
     public function AlunoTurma() {
         return $this->hasMany(AlunosTurmas::class);
     }
+
+    public function Professor() {
+        return $this->hasOne(Professores::class,'id');
+    }
 }

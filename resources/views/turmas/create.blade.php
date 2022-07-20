@@ -41,8 +41,8 @@
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
    <!--=============================formularios===========================================-->
 
-   <button onclick="location='/'"class="btn btn-primary">
-    VOLTAR A PÁGINA PRINCIPAL
+   <button onclick="location='{{route('turma.lista')}}'"class="btn btn-primary">
+    VOLTAR PÁGINA
    </button>
 
    <H1>NOVA TURMA</H1>
@@ -55,14 +55,19 @@
     </div>
 
     <div class="form-group">
-        <label >Professor</label>
-        <input type="text" class="form-control" name='prof'placeholder="Digite Aqui">
+        <label >Professor</label> <br>
+        <select name="prof">
+            @foreach ($professores as $professor)
+            <option value="{{$professor->id}}">{{$professor->nome}}</option>
+            @endforeach
+
+
+        </select>
       </div>
 
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
   </form>
-  <button class="btn btn-primary">Editar</button>
-    <button class="btn btn-primary" onclick="confirm('Quer deletar esse aluno?')?location='{{route('aluno.create')}}':''">Deletar</button>
+
    <!--=============================formularios fim============================= -->
         </div>
         </div>

@@ -428,8 +428,8 @@
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <!--=============================formularios===========================================-->
 
-            <button onclick="location='/'"class="btn btn-primary">
-                VOLTAR A PÁGINA PRINCIPAL
+            <button onclick="location='{{route('turma.lista')}}'"class="btn btn-primary">
+                VOLTAR PÁGINA
             </button>
 
             <H1>Detalhes</H1>
@@ -451,7 +451,7 @@
                             <td><button onclick="location='{{ route('aluno.create') }}'"class="btn btn-primary">
                                     Editar
                                 </button>
-                                <button onclick="location='{{ route('deletar.aluno') }}'"class="btn btn-primary">
+                                <button onclick="deletar()"class="btn btn-primary">
                                     Deletar
                                 </button>
                         </tr>
@@ -471,6 +471,18 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
         integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
+    </script>
+    <script>
+        function deletar(){
+           const pergunta=confirm('Deseja Realmete Deletar');
+           if (pergunta) {
+            location="{{ route('deletar.turmas',$detalhes->id ) }}"
+
+           } else {
+
+           }
+
+        }
     </script>
 </body>
 

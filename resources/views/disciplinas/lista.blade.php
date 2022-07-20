@@ -431,9 +431,7 @@
                 NOVA DISCIPLINA
             </button>
 
-            <button onclick="location='/'"class="btn btn-primary">
-                VOLTAR A PÁGINA PRINCIPAL
-            </button>
+            
 
             <H1>Disciplinas Cadastradas</H1>
             <table class="table table-hover">

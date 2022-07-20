@@ -22,7 +22,7 @@
         </style>
     </head>
     <body class="antialiased">
-    @include('menu')
+        @include('menu')
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -41,13 +41,39 @@
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
    <!--=============================formularios===========================================-->
 
-   <button onclick="location='/'"class="btn btn-primary">
-    voltar pagina principal
+   <button onclick="location='{{route('aluno.lista')}}'"class="btn btn-primary">
+    VOLTAR PÁGINA
    </button>
-   <button onclick="location='{{route('aluno.form')}}'"class="btn btn-primary">
-    inserir nova turma
-   </button>
-   <H1>{{$mensagem}}</H1>
+
+   <H1>NOVO ALUNO</H1>
+   <form action="{{route('atualizar.aluno',$aluno->id)}}" method="POST">
+@csrf
+
+    <div class="form-group">
+      <label >Nome</label>
+      <input type="text" class="form-control" name='nome' value="{{$aluno->nome}}" placeholder="Digite Aqui">
+    </div>
+
+    <div class="form-group">
+        <label >Nome da Mãe</label>
+        <input type="text" class="form-control" name='mae'value="{{$aluno->nomedamae}}"placeholder="Digite Aqui">
+    </div>
+
+    <div class="form-group">
+        <label >Nome do Pai</label>
+        <input type="text" class="form-control" name='pai'value="{{$aluno->nomedopai}}"placeholder="Digite Aqui">
+    </div>
+
+    <div class="form-group">
+        <label >Número Celular</label>
+        <input type="text" class="form-control" name='celular'value="{{$aluno->celular}}"placeholder="Digite Aqui">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Editar</button>
+
+
+
+  </form>
    <!--=============================formularios fim============================= -->
         </div>
         </div>

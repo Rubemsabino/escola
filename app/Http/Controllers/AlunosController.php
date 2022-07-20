@@ -73,7 +73,11 @@ class AlunosController extends Controller
      */
     public function edit($id)
     {
-        //
+        //pega aluno do BD
+        $aluno = Alunos::find($id);
+
+        // exibe form de edicao do aluno e evia dos dados do aluno
+        return view('alunos.editar', compact('aluno'));
     }
 
     /**
@@ -85,11 +89,24 @@ class AlunosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nome = $request->input('nome');
+        $mae = $request->input('mae');
+        $pai = $request->input('pai');
+        $celular = $request->input('celular');
+
+        $aluno = Alunos::find($id);
+        $aluno->nome = $nome;
+        $aluno->nomedamae = $mae;
+        $aluno->nomedopai = $pai;
+        $aluno->celular = $celular;
+        $aluno->save();
+
+        $mensagem = 'Aluno Editado!';
+        return view('alunos.sucesso', compact('mensagem'));
     }
 
     /**
-     * Remove the specified resource from storage. / 
+     * Remove the specified resource from storage. /
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

@@ -44,7 +44,7 @@
    VOLTAR PÁGINA
    </button>
    <h1>NOVO PROFESSOR</h1>
-   <form action="{{route('professor.salvar')}}" method="POST">           
+   <form action="{{route('professor.salvar')}}" method="POST">
 @csrf
       <div class="form-group">
       <label >Nome</label>
@@ -66,8 +66,7 @@
 
           <button type="submit" class="btn btn-primary">Cadastrar</button>
   </form>
-  <button type="submit" class="btn btn-primary">Editar</button>
-  <button type="submit" class="btn btn-primary">Deletar</button>
+  
    <!--=============================formularios formularios============================= -->
         </div>
         </div>

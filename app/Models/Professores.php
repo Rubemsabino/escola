@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Professores extends Model
 {
     use HasFactory;
+    public function Turma() {
+        return $this->belongsTo(Turmas::class);
+    }
+
 }

@@ -431,7 +431,7 @@
                 NOVA TURMA
             </button>
 
-           
+
 
             <H1>Turmas Cadastradas</H1>
             <table class="table table-hover">
@@ -439,6 +439,7 @@
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Turma</th>
+                        <th scope="col">nome</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -448,13 +449,14 @@
             <tr>
                 <th>{{$turma->id}}</th>
                 <td>{{$turma->nome}}</td>
+                <td>{{$turma->Professor->nome}}</td>
                 <td><button onclick="location='{{ route('detalhe_TURMA.lista',$turma->id) }}'"class="btn btn-primary">
         Detalhes
     </button>
             </tr>
         @endforeach
 
-   
+
                 </tbody>
             </table>
 

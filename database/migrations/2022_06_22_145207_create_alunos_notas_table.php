@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table-> foreignId('alunos_id')->constrained();
             $table->foreignId('disciplina_id')->constrained();
+            // TODO acrescentar campo de ano e vincular a tabela de turma
             $table->string('unidade');
             $table->float('projeto');
             $table->float('teste');

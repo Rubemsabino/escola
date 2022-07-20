@@ -4,7 +4,7 @@
 use App\Http\Controllers\AlunosController;
 use App\Http\Controllers\DisciplinasController;
 use App\Http\Controllers\ProfessoresController;
-
+use App\Http\Controllers\TurmasController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -32,6 +32,8 @@ Route::get('/alunos/criar',  [AlunosController::class, 'create'])->name("aluno.c
 Route::post('/alunos/salvar', [AlunosController::class,'store'])->name("aluno.salvar");
 Route::get('/alunos/detalhes/{id}',[AlunosController::class,'show'])->name("detalhe_ALUNO.lista");
 Route::get ('/alunos/deletar/{id}', [AlunosController::class,'destroy'])->name("deletar.aluno");
+Route::get('/alunos/editar/{id}', [AlunosController::class,'edit'])->name("editar.aluno");
+Route::post('/alunos/atualizar/{id}', [AlunosController::class,'update'])->name("atualizar.aluno");
 
 Route::get('/disciplinas/list', [DisciplinasController::class,'index'])->name("disciplina.lista");
 Route::get('/disciplina/criar', [DisciplinasController::class, 'create'])->name("disciplina.create");
@@ -45,34 +47,8 @@ Route::post('/professores/salvar', [ProfessoresController::class,'store'])->name
 Route::get('/professores/detalhes/{id}', [ProfessoresController::class,'show'])->name("detalhe_PROFESSOR.lista");
 Route::get ('/professores/deletar/{id}', [ProfessoresController::class,'destroy'])->name("deletar.professor");
 
-            //TURMAS
-// exibe formulario da turma
-Route::get('/nova_turma', function () {
-    return view('turmas.create');
-})->name("turma.create");
-
-Route::get('/turmas/list', function () {
-    $turmas = turmas::orderBy('nome')->get();
-    //dd($alunos);//serve para ver se chamou os alunos no BD
-    return view('turmas.lista', compact('turmas'));
-})->name("turma.lista");
-
-Route::get('/detalhes_TURMAS/list/{id}', function ($id) {
-    $detalhes = turmas::find($id);
-    return view('turmas.detalhes', compact('detalhes'));
-})->name("detalhe_TURMA.lista");
-
-//envias os dados para o banco de dados
-Route::post('/turma/salvar', function (Request $request) {
-    $nome = $request->input('nome');
-    $prof = $request->input('prof');
-
-
-    $aluno = new Turmas();
-    $aluno->nome = $nome;
-    $aluno->id_professor = $prof;
-    $aluno->save();
-
-    return view('turma-sucesso');
-})->name("turma.salvar");
-
+Route::get('/turmas/list', [TurmasController::class,'index'])->name("turma.lista");
+Route::get('/turmas/criar', [TurmasController::class, 'create'])->name("turma.create");
+Route::post('/turma/salvar', [TurmasController::class,'store'])->name("turma.salvar");
+Route::get('/turma/detalhes/{id}', [TurmasController::class,'show'])->name("detalhe_TURMA.lista");
+Route::get ('/turmas/deletar/{id}', [TurmasController::class,'destroy'])->name("deletar.turmas");
