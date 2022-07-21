@@ -449,7 +449,7 @@
                             <td>{{ $detalhes->nome }}</td>
                             <td>{{ $detalhes->formacao }}</td>
                            
-                            <td><button onclick="location='{{ route('professor.create') }}'"class="btn btn-primary">
+                            <td><button onclick="location='{{ route('editar.professor',$detalhes->id) }}'"class="btn btn-primary">
                                     Editar
                                 </button>
                                 <button onclick="deletar()"class="btn btn-primary">

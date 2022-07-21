@@ -71,7 +71,11 @@ class TurmasController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $professores= Professores::orderBy('nome')->get();
+        return view('turmas.editar', compact('professores'));
+
+             
     }
 
     /**
@@ -83,7 +87,19 @@ class TurmasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nome = $request->input('nome');
+        $prof = $request->input('prof');
+
+
+        $aluno = Turmas::find($id);
+
+        $aluno->nome = $nome;
+        $aluno->id_professor = $prof;
+
+        $aluno->save();
+
+        $mensagem = 'Turma Editada!';
+        return view('turmas.sucesso', compact('mensagem'));
     }
 
     /**

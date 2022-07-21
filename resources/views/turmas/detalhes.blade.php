@@ -447,8 +447,8 @@
                         <tr>
                             <th>{{ $detalhes->id }}</th>
                             <td>{{ $detalhes->nome }}</td>
-                            <td>{{ $detalhes->id_professor }}</td>
-                            <td><button onclick="location='{{ route('aluno.create') }}'"class="btn btn-primary">
+                            <td>{{ $detalhes->Professor->nome }}</td>
+                            <td><button onclick="location='{{ route('editar.turma',$detalhes->id) }}'"class="btn btn-primary">
                                     Editar
                                 </button>
                                 <button onclick="deletar()"class="btn btn-primary">
@@ -476,7 +476,7 @@
         function deletar(){
            const pergunta=confirm('Deseja Realmete Deletar');
            if (pergunta) {
-            location="{{ route('deletar.turmas',$detalhes->id ) }}"
+            location="{{ route('deletar.turma',$detalhes->id ) }}"
 
            } else {
 

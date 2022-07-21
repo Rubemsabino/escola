@@ -95,10 +95,12 @@ class AlunosController extends Controller
         $celular = $request->input('celular');
 
         $aluno = Alunos::find($id);
+
         $aluno->nome = $nome;
         $aluno->nomedamae = $mae;
         $aluno->nomedopai = $pai;
         $aluno->celular = $celular;
+        
         $aluno->save();
 
         $mensagem = 'Aluno Editado!';

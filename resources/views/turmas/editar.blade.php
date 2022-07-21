@@ -45,7 +45,7 @@
     VOLTAR PÁGINA
    </button>
 
-   <H1>NOVA TURMA</H1>
+   <H1>EDITAR TURMA</H1>
    <form action="/turma/salvar" method="POST">
 @csrf
 
@@ -63,7 +63,6 @@
 
 
         </select>
-        
       </div>
 
     <button type="submit" class="btn btn-primary">Cadastrar</button>

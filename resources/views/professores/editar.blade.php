@@ -40,36 +40,34 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
    <!--=============================formularios===========================================-->
-
-   <button onclick="location='{{route('turma.lista')}}'"class="btn btn-primary">
-    VOLTAR PÁGINA
+   <button onclick="location='{{route('professor.lista')}}'"class="btn btn-primary">
+   VOLTAR PÁGINA
    </button>
-
-   <H1>NOVA TURMA</H1>
-   <form action="/turma/salvar" method="POST">
+   <h1>EDITAR PROFESSOR</h1>
+   <form action="{{route('atualizar.professor',$professor->id)}}" method="POST">
 @csrf
-
-    <div class="form-group">
+      <div class="form-group">
       <label >Nome</label>
-      <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
+      <input type="text" class="form-control" name='nome' value="{{$professor->nome}}" placeholder="Digite Aqui">
+
     </div>
 
     <div class="form-group">
-        <label >Professor</label> <br>
-        <select name="prof">
-            @foreach ($professores as $professor)
-            <option value="{{$professor->id}}">{{$professor->nome}}</option>
-            @endforeach
+        <label >Celular</label>
+        <input type="text" class="form-control" name='celular' value="{{$professor->celular}}" placeholder="Digite Aqui">
 
-
-        </select>
-        
       </div>
 
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
-  </form>
+      <div class="form-group">
+        <label >Formação</label>
+        <input type="text" class="form-control" name='formacao' value="{{$professor->formacao}}" placeholder="Digite Aqui">
 
-   <!--=============================formularios fim============================= -->
+      </div>
+
+          <button type="submit" class="btn btn-primary">Editar</button>
+  </form>
+  
+   <!--=============================formularios formularios============================= -->
         </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>

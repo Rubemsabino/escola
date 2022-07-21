@@ -439,7 +439,7 @@
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Turma</th>
-                        <th scope="col">nome</th>
+                        <th scope="col">Professor</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>

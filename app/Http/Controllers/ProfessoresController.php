@@ -69,7 +69,11 @@ class ProfessoresController extends Controller
      */
     public function edit($id)
     {
-        //
+        //pega aluno do BD
+        $professor = Professores::find($id);
+
+        // exibe form de edicao do aluno e evia dos dados do aluno
+        return view('professores.editar', compact('professor'));
     }
 
     /**
@@ -81,7 +85,20 @@ class ProfessoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nome = $request->input('nome');
+        $celular = $request->input('celular');
+        $formacao = $request->input('formacao');
+
+        $professor = Professores::find($id);
+
+        $professor->nome = $nome;
+        $professor->celular = $celular;
+        $professor->formacao = $formacao;
+
+        $professor->save();
+
+        $mensagem = 'Professor Editado!';
+        return view('professores.sucesso', compact('mensagem'));
     }
 
     /**

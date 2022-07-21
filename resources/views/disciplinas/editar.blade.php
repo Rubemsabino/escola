@@ -40,36 +40,21 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
    <!--=============================formularios===========================================-->
-
-   <button onclick="location='{{route('turma.lista')}}'"class="btn btn-primary">
-    VOLTAR PÁGINA
+   <button onclick="location='{{route('disciplina.lista')}}'"class="btn btn-primary">
+   VOLTAR PÁGINA
    </button>
-
-   <H1>NOVA TURMA</H1>
-   <form action="/turma/salvar" method="POST">
+   <h1>EDITAR DISCIPLINA</h1>
+   <form action="{{route('atualizar.disciplina',$disciplina->id)}}" method="POST">
 @csrf
-
     <div class="form-group">
       <label >Nome</label>
-      <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
-    </div>
-
-    <div class="form-group">
-        <label >Professor</label> <br>
-        <select name="prof">
-            @foreach ($professores as $professor)
-            <option value="{{$professor->id}}">{{$professor->nome}}</option>
-            @endforeach
+      <input type="text" class="form-control" name='nome'value="{{$disciplina->nome}}"placeholder="Digite Aqui">
 
 
-        </select>
-        
-      </div>
-
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
+          <button type="submit" class="btn btn-primary">Editar</button>
   </form>
-
-   <!--=============================formularios fim============================= -->
+ 
+   <!--=============================formularios formularios============================= -->
         </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>

@@ -66,7 +66,11 @@ class DisciplinasController extends Controller
      */
     public function edit($id)
     {
-        //
+        //pega aluno do BD
+        $disciplina = Disciplinas::find($id);
+
+        // exibe form de edicao do aluno e evia dos dados do aluno
+        return view('disciplinas.editar', compact('disciplina'));
     }
 
     /**
@@ -78,7 +82,16 @@ class DisciplinasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nome = $request->input('nome');
+       
+        $disciplina = Disciplinas::find($id);
+
+        $disciplina->nome = $nome;
+
+        $disciplina->save();
+
+        $mensagem = 'Disciplina Editada!';
+        return view('disciplinas.sucesso', compact('mensagem'));
     }
 
     /**
