@@ -49,7 +49,7 @@
    <form action="{{route('aluno.salvar')}}" method="POST">
 @csrf
 
-    <div class="form-group">
+<div class="form-group">
       <label >Nome</label>
       <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
     </div>
@@ -67,6 +67,26 @@
     <div class="form-group">
         <label >Número Celular</label>
         <input type="text" class="form-control" name='celular'placeholder="Digite Aqui">
+    </div>
+
+    <div class="form-group">
+        <label >Data de Nascimento</label>
+        <input type="text" class="form-control" name='Data_nasc'placeholder="Digite Aqui">
+    </div>
+
+    <div class="form-group">
+        <label >RG</label>
+        <input type="text" class="form-control" name='RG'placeholder="Digite Aqui">
+    </div>
+
+    <div class="form-group">
+        <label >CPF</label>
+        <input type="text" class="form-control" name='CPF'placeholder="Digite Aqui">
+    </div>
+
+    <div class="form-group">
+        <label >Ano Letivo</label>
+        <input type="text" class="form-control" name='ano_letivo'placeholder="Digite Aqui">
     </div>
 
     <button type="submit" class="btn btn-primary">Cadastrar</button> <div class="form-group">

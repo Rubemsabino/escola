@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('nomedamae',100);
             $table->string('nomedopai',100);
             $table->string('celular',30);
+            $table->string('Data_nasc',30);
+            $table->string('RG',30);
+            $table->string('CPF',30);
+            $table->string('ano_letivo',30);
 
 
             $table->timestamps();

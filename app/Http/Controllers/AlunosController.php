@@ -103,6 +103,10 @@ class AlunosController extends Controller
         $mae = $request->input('mae');
         $pai = $request->input('pai');
         $celular = $request->input('celular');
+        $Data_nasc = $request->input('Data_nasc');
+        $RG = $request->input('RG');
+        $CPF = $request->input('CPF');
+        $ano_letivo = $request->input('ano_letivo');
 
         $aluno = Alunos::find($id);
 
@@ -110,6 +114,10 @@ class AlunosController extends Controller
         $aluno->nomedamae = $mae;
         $aluno->nomedopai = $pai;
         $aluno->celular = $celular;
+        $aluno->Data_nasc = $Data_nasc;
+        $aluno->RG = $RG;
+        $aluno->CPF = $CPF;
+        $aluno->ano_letivo = $ano_letivo;
 
         $aluno->save();
 

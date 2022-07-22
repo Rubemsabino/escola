@@ -436,11 +436,16 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
+                    <th scope="col">id</th>
+                    <th scope="col">id</th>
                         <th scope="col">Aluno</th>
                         <th scope="col">Mãe</th>
                         <th scope="col">Pai</th>
                         <th scope="col">Celular</th>
+                        <th scope="col">Data de Nascimento</th>
+                        <th scope="col">RG</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">Ano Letivo</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -452,6 +457,10 @@
                             <td>{{ $detalhes->nomedamae }}</td>
                             <td>{{ $detalhes->nomedopai }}</td>
                             <td>{{ $detalhes->celular }}</td>
+                            <td>{{ $detalhes->Data_nasc }}</td>
+                            <td>{{ $detalhes->RG }}</td>
+                            <td>{{ $detalhes->CPF }}</td>
+                            <td>{{ $detalhes->ano_letivo }}</td>
                             <td><button onclick="location='{{ route('editar.aluno',$detalhes->id) }}'"class="btn btn-primary">
                                     Editar
                                 </button>
