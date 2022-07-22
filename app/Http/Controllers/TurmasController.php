@@ -42,6 +42,7 @@ class TurmasController extends Controller
         $prof = $request->input('prof');
 
 
+
         $aluno = new Turmas();
         $aluno->nome = $nome;
         $aluno->id_professor = $prof;
@@ -71,11 +72,14 @@ class TurmasController extends Controller
      */
     public function edit($id)
     {
-        
-        $professores= Professores::orderBy('nome')->get();
-        return view('turmas.editar', compact('professores'));
 
-             
+        //pega aluno do BD
+        $turma = Turmas::find($id);
+        $professores= Professores::orderBy('nome')->get();
+        // exibe form de edicao do aluno e evia dos dados do aluno
+        return view('turmas.editar', compact('turma','professores'));
+
+
     }
 
     /**

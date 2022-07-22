@@ -34,6 +34,7 @@ Route::get('/alunos/detalhes/{id}',[AlunosController::class,'show'])->name("deta
 Route::get ('/alunos/deletar/{id}', [AlunosController::class,'destroy'])->name("deletar.aluno");
 Route::get('/alunos/editar/{id}', [AlunosController::class,'edit'])->name("editar.aluno");
 Route::post('/alunos/atualizar/{id}', [AlunosController::class,'update'])->name("atualizar.aluno");
+Route::get('/alunos/busca', [AlunosController::class,'busca'])->name("aluno.busca");
 
 Route::get('/disciplinas/list', [DisciplinasController::class,'index'])->name("disciplina.lista");
 Route::get('/disciplina/criar', [DisciplinasController::class, 'create'])->name("disciplina.create");

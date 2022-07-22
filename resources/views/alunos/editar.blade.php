@@ -45,7 +45,7 @@
     VOLTAR PÁGINA
    </button>
 
-   <H1>NOVO ALUNO</H1>
+   <H1>EDITAR ALUNO</H1>
    <form action="{{route('atualizar.aluno',$aluno->id)}}" method="POST">
 @csrf
 

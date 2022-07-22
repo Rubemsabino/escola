@@ -15,6 +15,6 @@ class Turmas extends Model
     }
 
     public function Professor() {
-        return $this->hasOne(Professores::class,'id');
+        return $this->hasOne(Professores::class,'id','id_professor');
     }
 }

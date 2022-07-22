@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alunos;
+use App\Models\AlunosTurmas;
+use App\Models\Turmas;
 use Illuminate\Http\Request;
 
 
@@ -17,6 +19,7 @@ class AlunosController extends Controller
     {
         $alunos = Alunos::orderBy('nome')->get();
         return view('alunos.lista', compact('alunos'));
+
     }
 
     /**
@@ -25,8 +28,8 @@ class AlunosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('alunos.create');
+    {$turmas=Turmas::orderBy('nome')->get();
+        return view('alunos.create',compact('turmas'));
     }
 
     /**
@@ -41,6 +44,8 @@ class AlunosController extends Controller
         $mae = $request->input('mae');
         $pai = $request->input('pai');
         $celular = $request->input('celular');
+        $id_turma= $request->input('id-turma');
+
 
         $aluno = new Alunos;
         $aluno->nome = $nome;
@@ -48,6 +53,11 @@ class AlunosController extends Controller
         $aluno->nomedopai = $pai;
         $aluno->celular = $celular;
         $aluno->save();
+
+        $alunosturmas = new AlunosTurmas;
+        $alunosturmas->turmas_id=$id_turma;
+        $alunosturmas->alunos_id=$aluno->id;
+        $alunosturmas->save();
 
         $mensagem = 'Aluno Salvo!';
         return view('alunos.sucesso', compact('mensagem'));
@@ -100,7 +110,7 @@ class AlunosController extends Controller
         $aluno->nomedamae = $mae;
         $aluno->nomedopai = $pai;
         $aluno->celular = $celular;
-        
+
         $aluno->save();
 
         $mensagem = 'Aluno Editado!';
@@ -119,4 +129,30 @@ class AlunosController extends Controller
         $mensagem = 'Aluno Excluido!';
         return view('alunos.sucesso', compact('mensagem'));
     }
+
+public function busca(Request $request)
+{
+    $nome = $request->input('nome');
+    $Telefone = $request->input('Telefone');
+
+    $alunos=Alunos::query();
+    if ($request->has('nome')){
+        $alunos->where('nome','LIKE','%'.$nome.'%');
+    }
+    if ($request->has('Telefone')){
+        $alunos->where('celular','LIKE','%'.$Telefone.'%');
+    }
+    $alunos=$alunos->get();
+    return view('alunos.lista', compact('alunos'));
+
+
 }
+
+
+
+
+
+
+}
+
+

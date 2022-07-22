@@ -69,7 +69,17 @@
         <input type="text" class="form-control" name='celular'placeholder="Digite Aqui">
     </div>
 
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <button type="submit" class="btn btn-primary">Cadastrar</button> <div class="form-group">
+        <label >Turma</label> <br>
+        <select name="id-turma">
+            @foreach ($turmas as $turma)
+            <option value="{{$turma->id}}">{{$turma->nome}}</option>
+            @endforeach
+
+
+        </select>
+
+      </div>
 
 
 

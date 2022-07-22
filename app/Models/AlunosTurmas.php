@@ -14,6 +14,6 @@ class AlunosTurmas extends Model
     }
 
     public function turma(){
-        return $this->belongsTo(Turmas::class);
+        return $this->belongsTo(Turmas::class,'turmas_id','id');
     }
 }

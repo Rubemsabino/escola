@@ -46,26 +46,26 @@
    </button>
 
    <H1>EDITAR TURMA</H1>
-   <form action="/turma/salvar" method="POST">
+   <form action="{{route('atualizar.turma',$turma->id)}}" method="POST">
 @csrf
 
     <div class="form-group">
       <label >Nome</label>
-      <input type="text" class="form-control" name='nome'placeholder="Digite Aqui">
+      <input type="text" class="form-control" name='nome'value="{{$turma->nome}}"placeholder="Digite Aqui">
     </div>
 
     <div class="form-group">
         <label >Professor</label> <br>
         <select name="prof">
             @foreach ($professores as $professor)
-            <option value="{{$professor->id}}">{{$professor->nome}}</option>
+            <option value="{{$professor->id}}" {{$professor->id==$turma->id_professor ?'selected' :''}}>{{$professor->nome}}</option>
             @endforeach
 
 
         </select>
       </div>
 
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <button type="submit" class="btn btn-primary">Editar</button>
   </form>
 
    <!--=============================formularios fim============================= -->

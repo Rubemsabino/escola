@@ -427,10 +427,15 @@
 
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <!--=============================formularios===========================================-->
-
+<form action="{{ route('aluno.busca') }}" method="get">
+    <label>busca</label>
+<input type="text" class="form-control" name="nome" placeholder="Digite Aqui o nome do aluno">
+<input type="text" class="form-control" name="Telefone" placeholder="Digite Aqui o numero do aluno">
+<button type="submit" class="btn btn-primary">buscar</button>
+</form>
             <button onclick="location='{{ route('aluno.create') }}'"class="btn btn-primary">
                 NOVO ALUNO
-            </button>       
+            </button>
 
             <H1>Alunos Cadastrados</H1>
             <table class="table table-hover">
@@ -438,6 +443,7 @@
                     <tr>
                         <th scope="col">id</th>
                         <th scope="col">Aluno</th>
+                        <th scope="col">Turma</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -447,6 +453,7 @@
                         <tr>
                             <th>{{ $aluno->id }}</th>
                             <td>{{ $aluno->nome }}</td>
+                            <td>{{ $aluno->AlunoTurma?->turma?->nome}}</td>
                             <td><button onclick="location='{{ route('detalhe_ALUNO.lista',$aluno->id) }}'"class="btn btn-primary">
                                     Detalhes
                                 </button>
