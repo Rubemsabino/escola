@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang=pt-br>
 
 <head>
     <meta charset="utf-8">
@@ -436,8 +436,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">id</th>
+                        <th scope="col">id</th>
                         <th scope="col">Aluno</th>
                         <th scope="col">Mãe</th>
                         <th scope="col">Pai</th>

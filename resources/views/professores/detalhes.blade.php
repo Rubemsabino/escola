@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
@@ -432,13 +432,17 @@
                 VOLTAR PÁGINA
             </button>
 
-            <H1>Detalhes</H1>
+            <H1>Detalhes do Professor</H1>
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">id</th>
-                        <th scope="col">Professor</th>
-                        <th scope="col">formacão</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">RG</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">Data_nasc</th>
+                        <th scope="col">Celular</th>
+                        <th scope="col">Formacão</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -447,6 +451,10 @@
                         <tr>
                             <th>{{ $detalhes->id }}</th>
                             <td>{{ $detalhes->nome }}</td>
+                            <td>{{ $detalhes->RG }}</td>
+                            <td>{{ $detalhes->CPF }}</td>
+                            <td>{{ $detalhes->Data_nasc }}</td>
+                            <td>{{ $detalhes->celular }}</td>
                             <td>{{ $detalhes->formacao }}</td>
                            
                             <td><button onclick="location='{{ route('editar.professor',$detalhes->id) }}'"class="btn btn-primary">

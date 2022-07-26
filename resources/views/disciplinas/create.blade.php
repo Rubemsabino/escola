@@ -43,7 +43,7 @@
    <button onclick="location='{{route('disciplina.lista')}}'"class="btn btn-primary">
    VOLTAR PÁGINA
    </button>
-   <h1>NOVA DISCIPLINA</h1>
+   <h1>Nova Disciplina</h1>
    <form action="/disciplinas/salvar" method="POST">
 @csrf
     <div class="form-group">

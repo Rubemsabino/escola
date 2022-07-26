@@ -45,7 +45,7 @@
     VOLTAR PÁGINA
    </button>
 
-   <H1>NOVA TURMA</H1>
+   <H1>Nova Turma</H1>
    <form action="/turma/salvar" method="POST">
 @csrf
 

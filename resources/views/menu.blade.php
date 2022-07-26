@@ -70,24 +70,24 @@
 
 
             <li> <a href="#">Professores</a> <ul>
-                <li> <a href="{{ route('professor.lista') }}">Lista Professores</a> </li>
-                <li> <a href="#">More 2</a> </li>
+                <li> <a href="{{ route('professor.lista') }}">Lista</a> </li>
+                <li> <a href="#">Turmas</a> </li>
             </ul></li>
 
             <li><a href="#">Alunos</a><ul>
-                <li><a href="{{ route('aluno.lista') }}">Lista Alunos</a></li>
-                <li><a href="#">More 2</a></li>
+                <li><a href="{{ route('aluno.lista') }}">Lista</a></li>
+                <li><a href="#">Notas</a></li>
             </ul></li>
 
             <li><a href="#">Turmas</a>
         <ul>
-            <li> <a href="{{ route('turma.lista') }}">Lista Turmas</a> </li>
-            <li><a href="#">More 2</a></li>
+            <li> <a href="{{ route('turma.lista') }}">Lista</a> </li>
+            <li><a href="#">Professor</a></li>
         </ul>
             </li>
             <li> <a href="#">Disciplina</a>  <ul>
-            <li> <a href="{{ route('disciplina.lista') }}">Lista Disciplna</a> </li>
-            <li><a href="#">More 2</a></li>
+            <li> <a href="{{ route('disciplina.lista') }}">Lista</a> </li>
+            <li><a href="#">Professor</a></li>
         </ul></li>
             <li><a href="#">Cantact</a></li>
         <ul>

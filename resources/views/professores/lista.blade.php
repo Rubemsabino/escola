@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang=pt-br>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,7 +51,7 @@
       <tr>
         <th scope="col">id</th>
         <th scope="col">Nome</th>
-        <th scope="col">formacão</th>
+        
         <th scope="col"></th>
       </tr>
     </thead>
@@ -61,6 +61,7 @@
             <tr>
             <th>{{$professore->id}}</th>
             <td>{{$professore->nome}}</td>
+            
                 <td><button onclick="location='{{ route('detalhe_PROFESSOR.lista',$professore->id) }}'"class="btn btn-primary">
                         Detalhes
                     </button>

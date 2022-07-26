@@ -36,11 +36,17 @@ class ProfessoresController extends Controller
     public function store(Request $request)
     {
         $nome = $request->input('nome');
+        $RG = $request->input('RG');
+        $CPF = $request->input('CPF');
+        $Data_nasc = $request->input('Data_nasc');
         $celular = $request->input('celular');
         $formacao = $request->input('formacao');
 
         $professor = new Professores();
         $professor->nome = $nome;
+        $professor->RG = $RG;
+        $professor->CPF = $CPF;
+        $professor->Data_nasc = $Data_nasc;
         $professor->celular = $celular;
         $professor->formacao = $formacao;
         $professor->save();
@@ -86,12 +92,16 @@ class ProfessoresController extends Controller
     public function update(Request $request, $id)
     {
         $nome = $request->input('nome');
+        $RG = $request->input('RG');
+        $CPF = $request->input('CPG');
         $celular = $request->input('celular');
         $formacao = $request->input('formacao');
 
         $professor = Professores::find($id);
 
         $professor->nome = $nome;
+        $professor->RG = $RG;
+        $professor->CPF = $CPF;
         $professor->celular = $celular;
         $professor->formacao = $formacao;
 
