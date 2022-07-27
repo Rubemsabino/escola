@@ -93,7 +93,7 @@ class ProfessoresController extends Controller
     {
         $nome = $request->input('nome');
         $RG = $request->input('RG');
-        $CPF = $request->input('CPG');
+        $CPF = $request->input('CPF');
         $celular = $request->input('celular');
         $formacao = $request->input('formacao');
 

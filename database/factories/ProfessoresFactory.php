@@ -20,7 +20,10 @@ class ProfessoresFactory extends Factory
             'nome'=>$this->faker->name(),
             'celular'=>$this->faker->phone(),
             'formacao'=>$this->faker->randomElement(['Pedagogo','psicopedagogo','Letras']),
-
+            'Data_nasc'=>date('d/m/Y'),
+            'RG'=>$this->faker->rg(),
+            'CPF'=>$this->faker->cpf(),
+            
         ];
     }
 }

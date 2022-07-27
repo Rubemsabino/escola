@@ -21,6 +21,10 @@ class AlunosFactory extends Factory
             'nomedamae'=>$this->faker->name(),
             'nomedopai'=>$this->faker->name(),
             'celular'=>$this->faker->phone(),
+            'Data_nasc'=>date('d/m/Y'),
+            'RG'=>$this->faker->rg(),
+            'CPF'=>$this->faker->cpf(),
+            'ano_letivo'=>date('Y'),
         ];
     }
 }

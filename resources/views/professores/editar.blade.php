@@ -44,29 +44,42 @@
    VOLTAR PÁGINA
    </button>
    <h1>EDITAR PROFESSOR</h1>
-   <form action="{{route('atualizar.professor',$professor->id)}}" method="POST">
-@csrf
-      <div class="form-group">
-      <label >Nome</label>
-      <input type="text" class="form-control" name='nome' value="{{$professor->nome}}" placeholder="Digite Aqui">
+    <form action="{{route('atualizar.professor',$professor->id)}}" method="POST">
+    @csrf
+        <div class="form-group">
+        <label >Nome</label>
+        <input type="text" class="form-control" name='nome' value="{{$professor->nome}}" placeholder="Digite Aqui">
+        </div>
 
-    </div>
+        <div class="form-group">
+            <label >RG</label>
+            <input type="text" class="form-control" name='RG' value="{{$professor->RG}}" placeholder="Digite Aqui">
+        </div>
 
-    <div class="form-group">
-        <label >Celular</label>
-        <input type="text" class="form-control" name='celular' value="{{$professor->celular}}" placeholder="Digite Aqui">
+        <div class="form-group">
+            <label >CPF</label>
+            <input type="text" class="form-control" name='CPF' value="{{$professor->CPF}}" placeholder="Digite Aqui">
+        </div>
 
-      </div>
+        <div class="form-group">
+            <label >Data de Nascimento</label>
+            <input type="text" class="form-control" name='Data_nasc' value="{{$professor->Data_nasc}}" placeholder="Digite Aqui">
+        </div>
 
-      <div class="form-group">
-        <label >Formação</label>
-        <input type="text" class="form-control" name='formacao' value="{{$professor->formacao}}" placeholder="Digite Aqui">
+        <div class="form-group">
+            <label >Celular</label>
+            <input type="text" class="form-control" name='celular' value="{{$professor->celular}}" placeholder="Digite Aqui">
+        </div>
 
-      </div>
+        <div class="form-group">
+            <label >Formação</label>
+            <input type="text" class="form-control" name='formacao' value="{{$professor->formacao}}" placeholder="Digite Aqui">
 
-          <button type="submit" class="btn btn-primary">Editar</button>
-  </form>
-  
+        </div>
+
+            <button type="submit" class="btn btn-primary">Editar</button>
+    </form>
+
    <!--=============================formularios formularios============================= -->
         </div>
         </div>
