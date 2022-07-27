@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang=pt-br>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +43,7 @@
    <button onclick="location='{{route('disciplina.lista')}}'"class="btn btn-primary">
    VOLTAR PÁGINA
    </button>
-   <h1>EDITAR DISCIPLINA</h1>
+   <h1>Editar Disciplina</h1>
    <form action="{{route('atualizar.disciplina',$disciplina->id)}}" method="POST">
 @csrf
     <div class="form-group">

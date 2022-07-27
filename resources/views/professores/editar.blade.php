@@ -43,7 +43,7 @@
    <button onclick="location='{{route('professor.lista')}}'"class="btn btn-primary">
    VOLTAR PÁGINA
    </button>
-   <h1>EDITAR PROFESSOR</h1>
+   <h1>Editar Professor</h1>
     <form action="{{route('atualizar.professor',$professor->id)}}" method="POST">
     @csrf
         <div class="form-group">

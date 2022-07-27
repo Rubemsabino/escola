@@ -45,7 +45,7 @@
     VOLTAR PÁGINA
    </button>
 
-   <H1>EDITAR TURMA</H1>
+   <H1>Editar Turma</H1>
    <form action="{{route('atualizar.turma',$turma->id)}}" method="POST">
 @csrf
 

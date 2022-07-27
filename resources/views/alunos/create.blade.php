@@ -45,7 +45,7 @@
     VOLTAR PÁGINA
    </button>
 
-   <H1>NOVO ALUNO</H1>
+   <H1>Novo Aluno</H1>
    <form action="{{route('aluno.salvar')}}" method="POST">
 @csrf
 

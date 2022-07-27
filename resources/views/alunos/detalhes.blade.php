@@ -432,7 +432,7 @@
                 VOLTAR PÁGINA
             </button>
 
-            <H1>Detalhes</H1>
+            <H1>Detalhes Aluno</H1>
             <table class="table table-hover">
                 <thead>
                     <tr>
