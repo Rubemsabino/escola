@@ -9,8 +9,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <!-- Styles -->
     <style>
@@ -407,28 +406,26 @@
 </head>
 
 <body class="antialiased">
-@include('menu')
-    <div
-        class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+    @include('menu')
+    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
         @if (Route::has('login'))
-            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                @auth
-                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                @else
-                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+            @auth
+            <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+            @else
+            <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"
-                            class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                    @endif
-                @endauth
-            </div>
+            @if (Route::has('register'))
+            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+            @endif
+            @endauth
+        </div>
         @endif
 
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <!--=============================formularios===========================================-->
 
-            <button onclick="location='{{route('professor.lista')}}'"class="btn btn-primary">
+            <button onclick="location='{{route('professor.lista')}}'" class="btn btn-primary">
                 VOLTAR PÁGINA
             </button>
 
@@ -448,22 +445,32 @@
                 <tbody>
 
 
-                        <tr>
-                            <th>{{ $detalhes->id }}</th>
-                            <td>{{ $detalhes->nome }}</td>
-                            <td>{{ $detalhes->RG }}</td>
-                            <td>{{ $detalhes->CPF }}</td>
-                            <td>{{ $detalhes->Data_nasc }}</td>
-                            <td>{{ $detalhes->celular }}</td>
-                            <td>{{ $detalhes->formacao }}</td>
-                           
-                            <td><button onclick="location='{{ route('editar.professor',$detalhes->id) }}'"class="btn btn-primary">
-                                    Editar
-                                </button>
-                                <button onclick="deletar()"class="btn btn-primary">
-                                    Deletar
-                                </button>
-                        </tr>
+                    <tr>
+                        <th>{{ $detalhes->id }}</th>
+                        <td>{{ $detalhes->nome }}</td>
+                        <td>{{ $detalhes->RG }}</td>
+                        <td>{{ $detalhes->CPF }}</td>
+                        <td>{{ $detalhes->Data_nasc }}</td>
+                        <td>{{ $detalhes->celular }}</td>
+                        <td>{{ $detalhes->formacao }}</td>
+
+                        <td><button onclick="location='{{ route('editar.professor',$detalhes->id) }}'" class="btn btn-primary">
+                                <!-- BUTÃO EDITAR-->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-pencil" viewBox="0 0 17 17">
+                                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                                </svg>
+                            </button>
+
+                            <button onclick="deletar()" class="btn btn-primary">
+                                <!-- BUTÃO DELETAR-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi       bi-trash" viewBox="0 0 17 17">
+
+
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                            </svg>
+                            </button>
+                    </tr>
 
 
 
@@ -475,21 +482,19 @@
             <!--=============================formularios fim============================= -->
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
-        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
     </script>
     <script>
-        function deletar(){
-           const pergunta=confirm('Deseja Realmete Deletar');
-           if (pergunta) {
-            location="{{ route('deletar.professor',$detalhes->id ) }}"
+        function deletar() {
+            const pergunta = confirm('Deseja Realmete Deletar');
+            if (pergunta) {
+                location = "{{ route('deletar.professor',$detalhes->id ) }}"
 
-           } else {
+            } else {
 
-           }
+            }
 
         }
     </script>

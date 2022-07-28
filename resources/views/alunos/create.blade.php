@@ -41,7 +41,7 @@
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
    <!--=============================formularios===========================================-->
 
-   <button onclick="location='{{route('aluno.lista')}}'"class="btn btn-primary">
+   <button onclick="location='{{route('aluno.lista;')}}'"class="btn btn-primary">
     VOLTAR PÁGINA
    </button>
 

@@ -63,13 +63,18 @@ Route::post('/turmas/atualizar/{id}', [TurmasController::class, 'update'])->name
 Route::get('/pdf/teste/{id}', function ($id) {
     $aluno = Alunos::find($id);
 
-
-
-    $mpdf = new \Mpdf\Mpdf([
+    $mpdf = new \Mpdf\Mpdf();
+    $mpdf->WriteHTML(view ('pdf.declaracao', compact('aluno')));
+    $mpdf->Output(); 
+});
+    /*$mpdf = new \Mpdf\Mpdf([
         'mode' => 'utf-8',
         'format' => [190, 236],
         'orientation' => 'L'
+
+        
     ]);
     $mpdf->WriteHTML(view ('pdf.declaracao', compact('aluno')));
     $mpdf->Output();
-})->name("teste.pdf");
+})->name("teste.pdf");*/
+

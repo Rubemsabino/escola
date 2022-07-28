@@ -17,7 +17,7 @@ class TurmasFactory extends Factory
     public function definition()
     {
         return [
-            'nome'=>$this->faker->unique()->randomElement(['1º ano','2º ano','3º ano','4º ano',]),
+            'nome'=>$this->faker->unique()->randomElement(['1º ano','2º ano','3º ano','4º ano','5º ano','6º ano','7º ano','8º ano','9º ano',]),
             "id_professor"=>$this->faker->unique()->randomElement(Professores::pluck('id')->toArray())
         ];
     }
