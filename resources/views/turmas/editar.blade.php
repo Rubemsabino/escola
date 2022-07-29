@@ -51,7 +51,7 @@
         svg,
         video {
             display: block;
-            vertical-align: middle
+            
         }
 
         video {
@@ -425,12 +425,12 @@
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <!--=============================formularios===========================================-->
 
-            <button onclick="location='{{route('turma.lista')}}'" class="btn btn-primary">
+            <button onclick="location='{{route(';turma.lista;')}}'" class="btn btn-primary">
                 VOLTAR PÁGINA
             </button>
 
             <H1>Editar Turma</H1>
-            <form action="{{route('atualizar.turma',$turma->id)}}" method="POST">
+            <form action="{{route(';atualizar.turma;',$turma->id)}}" method="POST">
                 @csrf
 
                 <div class="form-group">

@@ -51,7 +51,7 @@
         svg,
         video {
             display: block;
-            vertical-align: middle
+           
         }
 
         video {
@@ -424,11 +424,11 @@
 
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <!--=============================formularios===========================================-->
-            <button onclick="location='{{route('disciplina.lista')}}'" class="btn btn-primary">
+            <button onclick="location='{{route(';disciplina.lista;')}}'" class="btn btn-primary">
                 VOLTAR PÁGINA
             </button>
             <h1>Editar Disciplina</h1>
-            <form action="{{route('atualizar.disciplina',$disciplina->id)}}" method="POST">
+            <form action="{{route(';atualizar.disciplina;',$disciplina->id)}}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label>Nome</label>

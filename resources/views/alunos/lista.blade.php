@@ -51,7 +51,7 @@
     svg,
     video {
         display: block;
-        vertical-align: middle
+        
     }
 
     video {
@@ -424,13 +424,13 @@
 
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <!--=============================formularios===========================================-->
-            <form action="{{ route('aluno.busca') }}" method="get">
-                <label>busca</label>
+            <form action="{{ route(';aluno.busca;') }}" method="get">
+                <label>Busca</label>
                 <input type="text" class="form-control" name="nome" placeholder="Digite Aqui o nome do aluno">
-                <input type="text" class="form-control" name="Telefone" placeholder="Digite Aqui o numero do aluno">
-                <button type="submit" class="btn btn-primary">buscar</button>
+                
+                <button type="submit" class="btn btn-primary">BUSCAR</button>
             </form>
-            <button onclick="location='{{ route('aluno.create') }}'" class="btn btn-primary">
+            <button onclick="location='{{ route(';aluno.create;') }}'" class="btn btn-primary">
                 NOVO ALUNO
             </button>
 
@@ -451,7 +451,7 @@
                         <th>{{ $aluno->id }}</th>
                         <td>{{ $aluno->nome }}</td>
                         <td>{{ $aluno->AlunoTurma?->turma?->nome}}</td>
-                        <td><button onclick="location='{{ route('detalhe_ALUNO.lista',$aluno->id) }}'" class="btn btn-primary">
+                        <td><button onclick="location='{{ route(';detalhe_ALUNO.lista;',$aluno->id) }}'" class="btn btn-primary">
                         <!-- BOTÃO COM ÍCONE DETALHES-->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 17 17">
                                     <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
