@@ -60,6 +60,9 @@ class AlunosController extends Controller
         $aluno->RG = $RG;
         $aluno->CPF = $CPF;
         $aluno->ano_letivo = $ano_letivo;
+
+        
+
         $aluno->save();
 
         $alunosturmas = new AlunosTurmas;

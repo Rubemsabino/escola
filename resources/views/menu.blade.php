@@ -76,13 +76,14 @@
 
             <li><a href="#">Alunos</a><ul>
                 <li><a href="{{ route(';aluno.lista;') }}">Lista</a></li>
-                <li><a href="#">Notas</a></li>
+                <li><a href="{{ route(';nota.lista;') }}">Notas</a></li>
             </ul></li>
 
             <li><a href="#">Turmas</a>
         <ul>
             <li> <a href="{{ route(';turma.lista;') }}">Lista</a> </li>
             <li><a href="#">Professor</a></li>
+            <li><a href="#">Matricular Alunos</a></li>
         </ul>
             </li>
             <li> <a href="#">Disciplina</a>  <ul>

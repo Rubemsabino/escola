@@ -61,9 +61,9 @@
     </header>
     <nav id="menu">
         <a href="#" onclick="fecharMenu()">&times;Fechar</a>
-        <a href="{{ route('professor.lista') }}">Professor</a>
-        <a href="{{ route('aluno.lista') }}">Alunos</a>
-        <a href="{{ route('turma.lista') }}">Turmas</a>
+        <a href="{{ route(';professor.lista;') }}">Professor</a>
+        <a href="{{ route(';aluno.lista;') }}">Alunos</a>
+        <a href="{{ route(';turma.lista;') }}">Turmas</a>
         <a href="#">Youtube</a>
     </nav>
     <main id="conteudo">

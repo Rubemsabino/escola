@@ -5,6 +5,7 @@ use App\Http\Controllers\AlunosController;
 use App\Http\Controllers\DisciplinasController;
 use App\Http\Controllers\ProfessoresController;
 use App\Http\Controllers\TurmasController;
+use App\Http\Controllers\NotasController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -60,6 +61,8 @@ Route::get('/turmas/deletar/{id}', [TurmasController::class, 'destroy'])->name("
 Route::get('/turmas/editar/{id}', [TurmasController::class, 'edit'])->name(";editar.turma;");
 Route::post('/turmas/atualizar/{id}', [TurmasController::class, 'update'])->name(";atualizar.turma;");
 
+Route::get('/notas/list', [NotasController::class, 'index'])->name(";nota.lista;");
+
 Route::get('/pdf/teste/{id}', function ($id) {
     $aluno = Alunos::find($id);
 
@@ -78,3 +81,6 @@ Route::get('/pdf/teste/{id}', function ($id) {
     $mpdf->Output();
 })->name("teste.pdf");*/
 
+Route::get('/aluno_nota', function () {
+    return view('aluno_nota');
+});
