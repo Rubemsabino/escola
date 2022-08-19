@@ -61,7 +61,8 @@ Route::get('/turmas/deletar/{id}', [TurmasController::class, 'destroy'])->name("
 Route::get('/turmas/editar/{id}', [TurmasController::class, 'edit'])->name(";editar.turma;");
 Route::post('/turmas/atualizar/{id}', [TurmasController::class, 'update'])->name(";atualizar.turma;");
 
-Route::get('/notas/list', [NotasController::class, 'index'])->name(";nota.lista;");
+Route::get('/notas/create', [NotasController::class, 'create'])->name("nota.create");
+Route::post('/notas/salvar', [NotasController::class, 'store'])->name("nota.salvar");
 
 Route::get('/pdf/teste/{id}', function ($id) {
     $aluno = Alunos::find($id);

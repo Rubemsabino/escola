@@ -76,7 +76,7 @@
 
             <li><a href="#">Alunos</a><ul>
                 <li><a href="{{ route(';aluno.lista;') }}">Lista</a></li>
-                <li><a href="{{ route(';nota.lista;') }}">Notas</a></li>
+                <li><a href="{{ route('nota.create') }}">Notas</a></li>
             </ul></li>
 
             <li><a href="#">Turmas</a>

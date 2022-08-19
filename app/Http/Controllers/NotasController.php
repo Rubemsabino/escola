@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Alunos;
 use App\Models\AlunosNotas;
+use App\Models\Disciplinas;
 use Illuminate\Http\Request;
 
 class NotasController extends Controller
@@ -13,8 +16,7 @@ class NotasController extends Controller
      */
     public function index()
     {
-        $alunosNotas = AlunosNotas::orderBy('alunos_id')->get();
-        return view('notas.lista', compact('alunosNotas'));
+      
     }
 
     /**
@@ -24,7 +26,9 @@ class NotasController extends Controller
      */
     public function create()
     {
-        //
+        $alunos=Alunos::orderBy('nome')->get();
+        $disciplinas=Disciplinas::orderBy('nome')->get();
+            return view('notas.create',compact('alunos','disciplinas'));
     }
 
     /**
@@ -35,7 +39,26 @@ class NotasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id_aluno= $request->input('id-aluno');
+        $id_disciplinas= $request->input('id-disciplina');
+        $unidade= $request->input('unidade');
+        $projeto= $request->input('projeto');
+        $teste= $request->input('teste');
+        $prova= $request->input('prova');
+
+        $nota = new AlunosNotas;
+        $nota ->alunos_id=$id_aluno;
+        $nota ->disciplina_id=$id_disciplinas;
+        $nota ->unidade=$unidade;
+        $nota ->projeto=$projeto;
+        $nota ->teste=$teste;
+        $nota ->prova=$prova;
+            
+        $nota->save();
+
+        
+        $mensagem = 'Notas Salvas!';
+        return view('alunos.sucesso', compact('mensagem'));
     }
 
     /**
